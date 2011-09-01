@@ -1,0 +1,30 @@
+.orbit {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  background-repeat:repeat-y;
+  cursor: url(cursor.cur) 15 15, url(cursor.cur), url(css/cursor.cur), w-resize;
+  
+  float: left;
+  position: relative;
+  -webkit-background-size: 100% auto;
+}
+
+.feature {
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+  color: white;
+  
+  user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  display: none;
+}

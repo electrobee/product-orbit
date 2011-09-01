@@ -1,0 +1,4 @@
+ProductOrbit software. Not for redistribution.
+You may use it with electrobe hardware only.
+
+(c) 2010 electrobee, Canada

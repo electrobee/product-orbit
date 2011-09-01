@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<movie version="9" width="400" height="283" framerate="30" frames="2">
+	<frame>
+		<clip id="img0" import="../sample/usbstepper/usbstepper101.jpg"/>
+		<clip id="orbit-sprite" import="src/orbit.swf"/>
+		<library>
+			<clip id="first" width="400" height="283">
+				<frame><place id="img0" depth="1"/></frame>
+			</clip>
+			<!--
+			<font name="Symbols" import="src/gil_____.ttf" glyphs="0123456789%"/>
+			-->
+			<clip id="Symbols" import="src/fonts.swf"/>
+		</library>
+	</frame>
+	<frame>
+		<clip id="img1" import="../sample/usbstepper/usbstepper102.jpg"/>
+		<clip id="img2" import="../sample/usbstepper/usbstepper103.jpg"/>
+		<clip id="img3" import="../sample/usbstepper/usbstepper104.jpg"/>
+		<clip id="img4" import="../sample/usbstepper/usbstepper105.jpg"/>
+		<clip id="img5" import="../sample/usbstepper/usbstepper106.jpg"/>
+		<clip id="img6" import="../sample/usbstepper/usbstepper107.jpg"/>
+		<clip id="img7" import="../sample/usbstepper/usbstepper108.jpg"/>
+		<clip id="img8" import="../sample/usbstepper/usbstepper109.jpg"/>
+		<clip id="img9" import="../sample/usbstepper/usbstepper110.jpg"/>
+		<clip id="img10" import="../sample/usbstepper/usbstepper111.jpg"/>
+		<clip id="img11" import="../sample/usbstepper/usbstepper112.jpg"/>
+		<clip id="img12" import="../sample/usbstepper/usbstepper113.jpg"/>
+		<clip id="img13" import="../sample/usbstepper/usbstepper114.jpg"/>
+		<clip id="img14" import="../sample/usbstepper/usbstepper115.jpg"/>
+		<clip id="img15" import="../sample/usbstepper/usbstepper116.jpg"/>
+		<clip id="watermark" import="../sample/360.png"/>
+		<clip id="cursor-image" import="cursor.png"/>
+		<library>
+			<clip id="img" width="400" height="283">
+				<frame><place id="img0" depth="1"/></frame>
+				<frame><place id="img1" depth="1"/></frame>
+				<frame><place id="img2" depth="1"/></frame>
+				<frame><place id="img3" depth="1"/></frame>
+				<frame><place id="img4" depth="1"/></frame>
+				<frame><place id="img5" depth="1"/></frame>
+				<frame><place id="img6" depth="1"/></frame>
+				<frame><place id="img7" depth="1"/></frame>
+				<frame><place id="img8" depth="1"/></frame>
+				<frame><place id="img9" depth="1"/></frame>
+				<frame><place id="img10" depth="1"/></frame>
+				<frame><place id="img11" depth="1"/></frame>
+				<frame><place id="img12" depth="1"/></frame>
+				<frame><place id="img13" depth="1"/></frame>
+				<frame><place id="img14" depth="1"/></frame>
+				<frame><place id="img15" depth="1"/></frame>
+			</clip>
+			<clip id="logo">
+				<frame><place id="watermark" depth="1"/></frame>
+			</clip>
+			<clip id="cursor" x="100" y="100">
+				<frame><place id="cursor-image" depth="1"/></frame>
+			</clip>
+		</library>
+	</frame>
+</movie>

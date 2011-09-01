@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ProductOrbit" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\ProductOrbit" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib\mswud" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib\mswud" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="wxmsw28ud_core" />
+					<Add library="wxbase28ud" />
+					<Add library="wxbase28ud_xml" />
+					<Add library="wxpngd" />
+					<Add library="wxtiffd" />
+					<Add library="wxzlibd" />
+					<Add library="wxjpegd" />
+					<Add library="wxexpatd" />
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\ProductOrbit" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib\mswu" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib\mswu" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="msvcrt" />
+					<Add library="wxmsw28u_core" />
+					<Add library="wxbase28u" />
+					<Add library="wxbase28u_xml" />
+					<Add library="wxpng" />
+					<Add library="wxtiff" />
+					<Add library="wxzlib" />
+					<Add library="wxjpeg" />
+					<Add library="wxexpat" />
+					<Add directory="C:\wxWidgets-2.8.10\lib\gcc_lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-D_UNICODE" />
+			<Add option="-D_WINDOWS" />
+			<Add directory="C:\wxWidgets-2.8.10\include" />
+			<Add directory="C:\wxWidgets-2.8.10\contrib\include" />
+			<Add directory="..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\inc" />
+			<Add directory="..\src\nikon" />
+			<Add directory="..\..\boost_1_41_0" />
+			<Add directory="..\src\libturntable" />
+			<Add directory="..\src\canon\EDSDK 2.8 Windows\EDSDK\Header" />
+			<Add directory="..\src\eos" />
+			<Add directory="..\src\eos\Class" />
+			<Add directory="..\src\eos\Camera" />
+			<Add directory="..\src\eos\Command" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="C:\wxWidgets-2.8.10\include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="winmm" />
+			<Add library="rpcrt4" />
+			<Add library="kernel32" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winspool" />
+			<Add library="comdlg32" />
+			<Add library="advapi32" />
+			<Add library="shell32" />
+			<Add library="ole32" />
+			<Add library="oleaut32" />
+			<Add library="uuid" />
+			<Add library="comctl32" />
+			<Add library="wsock32" />
+			<Add library="odbc32" />
+			<Add library="PRSDK" />
+			<Add library="EDSDK" />
+			<Add library="NkdPTP" />
+			<Add library="..\src\libturntable\libturntable.a" />
+			<Add library="hid" />
+			<Add library="setupapi" />
+			<Add directory="..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\lib" />
+			<Add directory="..\src\nikon\lib" />
+			<Add directory="..\src\canon\EDSDK 2.8 Windows\EDSDK\Library" />
+		</Linker>
+		<ExtraCommands>
+			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRLIB.dll&quot; &quot;$(TARGET_OUTPUT_DIR)PRLIB.dll&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRSDK.dll&quot; &quot;$(TARGET_OUTPUT_DIR)PRSDK.dll&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\src\canon\EDSDK 2.8 Windows\EDSDK\Dll\*.dll&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\src\nikon\lib\*&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\src\icons&quot; &quot;$(TARGET_OUTPUT_DIR)icons\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\flash-viewer\cursor.png&quot; &quot;$(TARGET_OUTPUT_DIR)flash\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\flash-viewer\src\*.swf&quot; &quot;$(TARGET_OUTPUT_DIR)flash\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\flash-viewer\src\Main.hx&quot; &quot;$(TARGET_OUTPUT_DIR)flash\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\web\css&quot; &quot;$(TARGET_OUTPUT_DIR)css\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\web\js&quot; &quot;$(TARGET_OUTPUT_DIR)js\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\web\images&quot; &quot;$(TARGET_OUTPUT_DIR)images\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\tools-win\swfmill&quot; &quot;$(TARGET_OUTPUT_DIR)flash\swfmill\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\tools-win\haxe&quot; &quot;$(TARGET_OUTPUT_DIR)flash\haxe\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\flash\tools-win\abcsymbol\bin&quot; &quot;$(TARGET_OUTPUT_DIR)flash\bin\&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\win\magick&quot; &quot;$(TARGET_OUTPUT_DIR)magick\&quot; /E /Y /D' />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="..\src\ArtFromResource.cpp" />
+		<Unit filename="..\src\ArtFromResource.h" />
+		<Unit filename="..\src\AsyncTask.cpp" />
+		<Unit filename="..\src\AsyncTask.h" />
+		<Unit filename="..\src\CImg.h" />
+		<Unit filename="..\src\Camera.cpp" />
+		<Unit filename="..\src\Camera.h" />
+		<Unit filename="..\src\CameraPanel.cpp" />
+		<Unit filename="..\src\CameraPanel.h" />
+		<Unit filename="..\src\CanonEOS.cpp" />
+		<Unit filename="..\src\CanonEOS.h" />
+		<Unit filename="..\src\CanonEOSProperties.h" />
+		<Unit filename="..\src\CanonPowershot.cpp" />
+		<Unit filename="..\src\CanonPowershot.h" />
+		<Unit filename="..\src\CanonPowershotProperties.h" />
+		<Unit filename="..\src\CropRegion.cpp" />
+		<Unit filename="..\src\CropRegion.h" />
+		<Unit filename="..\src\DocManager.cpp" />
+		<Unit filename="..\src\DocManager.h" />
+		<Unit filename="..\src\EmptyStackPanel.cpp" />
+		<Unit filename="..\src\EmptyStackPanel.h" />
+		<Unit filename="..\src\ExportSettingsPanel.cpp" />
+		<Unit filename="..\src\ExportSettingsPanel.h" />
+		<Unit filename="..\src\FlashExporter.cpp" />
+		<Unit filename="..\src\FlashExporter.h" />
+		<Unit filename="..\src\GUITask.cpp" />
+		<Unit filename="..\src\GUITask.h" />
+		<Unit filename="..\src\HistogramPanel.cpp" />
+		<Unit filename="..\src\HistogramPanel.h" />
+		<Unit filename="..\src\ImageFilter.cpp" />
+		<Unit filename="..\src\ImageFilter.h" />
+		<Unit filename="..\src\ImagePanel.cpp" />
+		<Unit filename="..\src\ImagePanel.h" />
+		<Unit filename="..\src\ImageStackPanel.cpp" />
+		<Unit filename="..\src\ImageStackPanel.h" />
+		<Unit filename="..\src\ImagesExporter.cpp" />
+		<Unit filename="..\src\ImagesExporter.h" />
+		<Unit filename="..\src\NewProjectDialog.cpp" />
+		<Unit filename="..\src\NewProjectDialog.h" />
+		<Unit filename="..\src\NikonCamera.cpp" />
+		<Unit filename="..\src\NikonCamera.h" />
+		<Unit filename="..\src\NoImagePanel.cpp" />
+		<Unit filename="..\src\NoImagePanel.h" />
+		<Unit filename="..\src\ObjectSpinApp.cpp" />
+		<Unit filename="..\src\ObjectSpinApp.h" />
+		<Unit filename="..\src\ObjectSpinDocument.cpp" />
+		<Unit filename="..\src\ObjectSpinDocument.h" />
+		<Unit filename="..\src\ObjectSpinMain.cpp" />
+		<Unit filename="..\src\ObjectSpinMain.h" />
+		<Unit filename="..\src\ObjectSpinView.cpp" />
+		<Unit filename="..\src\ObjectSpinView.h" />
+		<Unit filename="..\src\SettingsPanel.cpp" />
+		<Unit filename="..\src\SettingsPanel.h" />
+		<Unit filename="..\src\TagDialog.cpp" />
+		<Unit filename="..\src\TagDialog.h" />
+		<Unit filename="..\src\ThreadHelper.cpp" />
+		<Unit filename="..\src\ThreadHelper.h" />
+		<Unit filename="..\src\TimeRemaining.cpp" />
+		<Unit filename="..\src\TimeRemaining.h" />
+		<Unit filename="..\src\Turntable.cpp" />
+		<Unit filename="..\src\Turntable.h" />
+		<Unit filename="..\src\Util.h" />
+		<Unit filename="..\src\Version.h" />
+		<Unit filename="..\src\WebExporter.cpp" />
+		<Unit filename="..\src\WebExporter.h" />
+		<Unit filename="..\src\eos\Camera\CameraController.h" />
+		<Unit filename="..\src\eos\Camera\CameraEvent.h" />
+		<Unit filename="..\src\eos\Camera\CameraEventListener.h" />
+		<Unit filename="..\src\eos\Camera\CameraModel.h" />
+		<Unit filename="..\src\eos\Camera\CameraModelLegacy.h" />
+		<Unit filename="..\src\eos\Camera\Processor.h" />
+		<Unit filename="..\src\eos\Class\ActionEvent.h" />
+		<Unit filename="..\src\eos\Class\ActionListener.h" />
+		<Unit filename="..\src\eos\Class\ActionSource.h" />
+		<Unit filename="..\src\eos\Class\Observer.h" />
+		<Unit filename="..\src\eos\Class\Synchronized.h" />
+		<Unit filename="..\src\eos\Class\Thread.h" />
+		<Unit filename="..\src\eos\Command\CloseSessionCommand.h" />
+		<Unit filename="..\src\eos\Command\Command.h" />
+		<Unit filename="..\src\eos\Command\DoEvfAFCommand.h" />
+		<Unit filename="..\src\eos\Command\DownloadCommand.h" />
+		<Unit filename="..\src\eos\Command\DownloadEvfCommand.h" />
+		<Unit filename="..\src\eos\Command\DriveLensCommand.h" />
+		<Unit filename="..\src\eos\Command\EndEvfCommand.h" />
+		<Unit filename="..\src\eos\Command\ExtendShutDownTimerCommand.h" />
+		<Unit filename="..\src\eos\Command\GetPropertyCommand.h" />
+		<Unit filename="..\src\eos\Command\GetPropertyDescCommand.h" />
+		<Unit filename="..\src\eos\Command\NotifyCommand.h" />
+		<Unit filename="..\src\eos\Command\OpenSessionCommand.h" />
+		<Unit filename="..\src\eos\Command\PressShutterButtonCommand.h" />
+		<Unit filename="..\src\eos\Command\SaveSettingCommand.h" />
+		<Unit filename="..\src\eos\Command\SetCapacityCommand.h" />
+		<Unit filename="..\src\eos\Command\SetPropertyCommand.h" />
+		<Unit filename="..\src\eos\Command\StartEvfCommand.h" />
+		<Unit filename="..\src\eos\Command\TakePictureCommand.h" />
+		<Unit filename="..\src\nikon\CallBack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\nikon\CtrlSample.h" />
+		<Unit filename="..\src\nikon\Function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\nikon\Maid3.h" />
+		<Unit filename="..\src\nikon\Maid3d1.h" />
+		<Unit filename="..\src\nikon\NkTypes.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="wxsmith\ObjectSpinFrame.wxs" />
+		<Unit filename="wxsmith\SettingsPanel.wxs" />
+		<Extensions>
+			<code_completion>
+				<search_path add="C:\wxWidgets-2.8.10\include" />
+				<search_path add="..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\inc" />
+				<search_path add="..\src\canon\EDSDK 2.7 Windows\EDSDK\Header" />
+			</code_completion>
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="..\src\ObjectSpinApp.cpp" main="ObjectSpinFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/ObjectSpinFrame.wxs" src="..\src\ObjectSpinMain.cpp" hdr="..\src\ObjectSpinMain.h" name="ObjectSpinFrame" language="CPP" />
+					<wxDialog wxs="wxsmith/NewProjectDialog.wxs" src="..\src\NewProjectDialog.cpp" hdr="..\src\NewProjectDialog.h" name="NewProjectDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/ImagePreviewDialog.wxs" src="..\src\ImagePreviewDialog.cpp" hdr="..\src\ImagePreviewDialog.h" name="ImagePreviewDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/TagDialog.wxs" src="..\src\TagDialog.cpp" hdr="..\src\TagDialog.h" name="TagDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/AutoCaptureDialog.wxs" src="../src/AutoCaptureDialog.cpp" hdr="../src/AutoCaptureDialog.h" name="AutoCaptureDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/ExportProjectDialog.wxs" src="../src/ExportProjectDialog.cpp" hdr="../src/ExportProjectDialog.h" name="ExportProjectDialog" language="CPP" />
+					<wxPanel wxs="wxsmith/ExportSettingsPanel.wxs" src="../src/ExportSettingsPanel.cpp" hdr="../src/ExportSettingsPanel.h" name="ExportSettingsPanel" language="CPP" />
+					<wxPanel wxs="wxsmith/EmptyStackPanel.wxs" src="../src/EmptyStackPanel.cpp" hdr="../src/EmptyStackPanel.h" name="EmptyStackPanel" language="CPP" />
+					<wxPanel wxs="wxsmith/NoImagePanel.wxs" src="../src/NoImagePanel.cpp" hdr="../src/NoImagePanel.h" name="NoImagePanel" language="CPP" />
+					<wxPanel wxs="wxsmith/CameraPanel.wxs" src="../src/CameraPanel.cpp" hdr="../src/CameraPanel.h" name="CameraPanel" language="CPP" />
+					<wxPanel wxs="wxsmith/SettingsPanel.wxs" src="../src/SettingsPanel.cpp" hdr="../src/SettingsPanel.h" name="SettingsPanel" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,8 @@
+be.haxer.ABCSymbol
+-cp ../haxe/std
+-cp src
+-cp lib
+#-lib format
+-main be.haxer.ABCSymbol
+-neko ./bin/abcsymbol.n
+-cmd nekotools boot ./bin/abcsymbol.n

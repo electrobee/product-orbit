@@ -1,0 +1,7 @@
+-swf9 bin\Test.swf
+-swf-header 400:283:30:FFFFFF
+-cp src 
+-main Main
+-swf-version 9
+-swf-lib bin/Resources.swf
+-resource src/Features.xml@features

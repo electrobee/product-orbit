@@ -1,0 +1,36 @@
+.orbiter {
+    cursor: url(cursor.cur) 15 15, url(cursor.cur), url(css/cursor.cur), w-resize;
+}
+
+.orbiter .orbiter-feature {
+    background: transparent;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #CCCCCC;
+    border: 1px solid rgba(32, 32, 32, 0.4);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.orbiter .orbiter-feature:hover {
+    background: transparent;
+    background: rgba(255, 255, 255, 0.5);
+}
+ 
+.orbiter .orbiter-feature .feature-tool-tip {
+    left: 5px;
+    right: 5px;
+    padding: 3px 3px;
+    font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: transparent;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    zoom: 1;
+}

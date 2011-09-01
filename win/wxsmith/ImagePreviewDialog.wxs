@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ImagePreviewDialog">
+		<title>Capture Preview</title>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="Custom" name="ID_CUSTOM1" subclass="ImagePanel" variable="imagePanel" member="yes">
+			<creating_code>$(THIS) = new $(CLASS)($(PARENT),image,$(ID),$(POS),$(SIZE));</creating_code>
+			<include_file>ImagePanel.h</include_file>
+			<local_include>1</local_include>
+			<style></style>
+		</object>
+	</object>
+</wxsmith>

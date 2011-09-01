@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<!-- Begin ProductOrbit -->
+<link rel="stylesheet" type="text/css" href="css/productorbit.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<!-- End ProductOrbit -->
+
+<title>ProductOrbit</title>
+</head>
+
+<body>
+
+<h1>ProductOrbit</h1>
+
+<!-- Begin ProductOrbit -->
+<img src="360/pineapple-thumb.jpg" style="width: 291px; height: 450px;" class="orbit2" alt="Pineapple" />
+<!-- End ProductOrbit -->
+
+<!-- Begin ProductOrbit -->
+<img src='360/pineapple-thumb.jpg#{"features":{"This is a test":{"0":{"top":10,"left":10,"width":160,"height":100},"1":{"top":20,"left":100,"width":260,"height":50}}},"loadTrigger":"now","showLoading":true}' style="width: 291px; height: 450px;" class="auto-orbit" alt="Pineapple" />
+<!-- End ProductOrbit -->
+
+<script src="js/GX.js"></script>
+<script src="js/GX.transitions.js"></script>
+<script src="js/productorbit.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$('.orbit2').orbit({
+			features: {
+				'This is a test': {
+					'0': {
+						top: 10,
+						left: 10,
+						width: 160,
+						height: 100
+					},
+
+					'1': {
+						top: 20,
+						left: 100,
+						width: 260,
+						height: 50
+					}
+				}
+			},
+			loadTrigger: 'now',
+			showLoading: true
+		});
+	});
+</script>
+<pre id="log"></pre>
+
+</body>
+</html>

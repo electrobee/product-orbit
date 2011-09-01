@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxPanel" name="EmptyStackPanel">
+		<bg>wxSYS_COLOUR_INACTIVECAPTION</bg>
+		<id_arg>0</id_arg>
+		<pos_arg>1</pos_arg>
+		<object class="wxGridSizer" variable="GridSizer1" member="no">
+			<cols>1</cols>
+			<rows>1</rows>
+			<object class="sizeritem">
+				<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+					<label>create or open a project to start</label>
+					<fg>wxSYS_COLOUR_GRAYTEXT</fg>
+					<font>
+						<weight>bold</weight>
+						<sysfont>wxSYS_DEFAULT_GUI_FONT</sysfont>
+						<relativesize>2.000000</relativesize>
+					</font>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>5</border>
+			</object>
+		</object>
+	</object>
+</wxsmith>

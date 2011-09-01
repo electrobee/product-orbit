@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="ObjectSpinFrame">
+		<title>ProductOrbit</title>
+		<icon stock_id="camera_48.png" stock_client="wxART_FRAME_ICON" />
+		<size>1000,600</size>
+		<minsize>800,600</minsize>
+		<id_arg>0</id_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+			<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+				<object class="sizeritem">
+					<object class="wxBoxSizer" variable="BoxSizer2" member="no">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<object class="wxScrolledWindow" name="ID_SCROLLEDWINDOW1" variable="scrolledWindow" member="yes">
+								<bg>wxSYS_COLOUR_INACTIVECAPTION</bg>
+								<style>wxHSCROLL|wxVSCROLL|wxDOUBLE_BORDER</style>
+								<object class="wxGridSizer" variable="scrolledWindowSizer" member="no">
+									<cols>1</cols>
+									<rows>1</rows>
+									<object class="sizeritem">
+										<object class="wxPanel" name="ID_PANEL2" subclass="ImageStackPanel" variable="imageStackPanel" member="yes">
+											<bg>wxSYS_COLOUR_WINDOW</bg>
+											<maxsize>800,600</maxsize>
+										</object>
+										<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+									</object>
+								</object>
+							</object>
+							<flag>wxTOP|wxLEFT|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+							<border>5</border>
+							<option>1</option>
+						</object>
+						<object class="sizeritem">
+							<object class="wxBoxSizer" variable="myControlPaneSizer" member="no">
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON1" variable="BitmapButton1" member="yes">
+										<bitmap stock_id="control_start.png" stock_client="wxART_BUTTON" />
+										<selected stock_id="control_start_blue.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_start_blue.png" stock_client="wxART_BUTTON" />
+										<default>1</default>
+										<tooltip>Go to first frame</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnBeginning" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON2" variable="BitmapButton2" member="yes">
+										<bitmap stock_id="control_rewind.png" stock_client="wxART_BUTTON" />
+										<selected stock_id="control_rewind_blue.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_rewind_blue.png" stock_client="wxART_BUTTON" />
+										<default>1</default>
+										<tooltip>Go to previous frame</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnPrev" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON3" variable="playButton" member="yes">
+										<bitmap stock_id="control_play.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_play_blue.png" stock_client="wxART_BUTTON" />
+										<default>1</default>
+										<focused>1</focused>
+										<tooltip>Play</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnPlay" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON4" variable="BitmapButton4" member="yes">
+										<bitmap stock_id="control_fastforward.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_fastforward_blue.png" stock_client="wxART_BUTTON" />
+										<default>1</default>
+										<tooltip>Go to next frame</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnNext" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON5" variable="BitmapButton5" member="yes">
+										<bitmap stock_id="control_end.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_end_blue.png" stock_client="wxART_BUTTON" />
+										<tooltip>Go to last frame</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnEnd" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON6" variable="positionButton" member="yes">
+										<bitmap stock_id="control_repeat.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_repeat_blue.png" stock_client="wxART_BUTTON" />
+										<tooltip>Move turntable to current position</tooltip>
+										<style>wxNO_BORDER</style>
+										<handler function="OnPosition" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON8" variable="prevPositionButton" member="yes">
+										<bitmap stock_id="control_back.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_back_blue.png" stock_client="wxART_BUTTON" />
+										<tooltip>Move turntable to previous position</tooltip>
+										<help>Move turntable to previous position</help>
+										<style>wxNO_BORDER</style>
+										<handler function="OnPrevPosition" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="ID_BITMAPBUTTON7" variable="nextPositionButton" member="yes">
+										<bitmap stock_id="control_forward.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="control_forward_blue.png" stock_client="wxART_BUTTON" />
+										<tooltip>Move turntable to next position</tooltip>
+										<help>Move turntable to next position</help>
+										<style>wxNO_BORDER</style>
+										<handler function="OnNextPosition" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxSlider" name="ID_IMAGE_SLIDER" variable="imageSlider" member="yes">
+										<max>11</max>
+										<style>wxSL_BOTH</style>
+										<handler function="OnImageSliderScroll" entry="EVT_COMMAND_SCROLL" />
+									</object>
+									<flag>wxTOP|wxBOTTOM|wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxStaticText" name="ID_STATICTEXT1" variable="imageSliderText" member="yes">
+										<label>1/12</label>
+										<size>40,-1</size>
+										<style>wxST_NO_AUTORESIZE|wxALIGN_RIGHT</style>
+									</object>
+									<flag>wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+								<object class="sizeritem">
+									<object class="wxGauge" name="ID_GAUGE1" variable="progressBar" member="yes" />
+									<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBitmapButton" name="wxID_CANCEL" variable="cancelButton" member="yes">
+										<bitmap stock_id="bullet_delete.png" stock_client="wxART_BUTTON" />
+										<focus stock_id="delete.png" stock_client="wxART_BUTTON" />
+										<default>1</default>
+										<style>wxNO_BORDER</style>
+										<handler function="OnCancelTask" entry="EVT_BUTTON" />
+									</object>
+									<flag>wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>5</border>
+								</object>
+							</object>
+							<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						</object>
+					</object>
+					<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+					<option>1</option>
+				</object>
+				<object class="sizeritem">
+					<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
+						<object class="notebookpage">
+							<object class="wxPanel" name="ID_PANEL5" variable="editPanel" member="yes">
+								<object class="wxBoxSizer" variable="BoxSizer4" member="no">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<object class="wxPanel" name="ID_PANEL3" subclass="HistogramPanel" variable="histogramPanel" member="yes">
+											<size>256,100</size>
+											<style>wxDOUBLE_BORDER|wxTAB_TRAVERSAL</style>
+										</object>
+										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+									</object>
+									<object class="sizeritem">
+										<object class="wxToggleButton" name="ID_TOGGLEBUTTON1" variable="onionskinButton" member="yes">
+											<label>Onionskin View</label>
+											<handler function="OnShowOnionSkin" entry="EVT_TOGGLEBUTTON" />
+										</object>
+										<flag>wxBOTTOM|wxLEFT|wxRIGHT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+									</object>
+									<object class="sizeritem">
+										<object class="wxPanel" name="ID_PANEL4" subclass="ExportSettingsPanel" variable="exportSettings" member="yes" />
+										<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+									</object>
+									<object class="spacer">
+										<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+										<border>5</border>
+										<option>1</option>
+									</object>
+								</object>
+							</object>
+							<label>Edit</label>
+						</object>
+						<object class="notebookpage">
+							<object class="wxPanel" name="ID_PANEL6" subclass="CameraPanel" variable="cameraPanel" member="yes" />
+							<label>Camera</label>
+						</object>
+						<object class="notebookpage">
+							<object class="wxPanel" name="ID_PANEL7" subclass="SettingsPanel" variable="settingsPanel" member="yes" />
+							<label>Settings</label>
+						</object>
+					</object>
+					<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+					<border>5</border>
+				</object>
+			</object>
+		</object>
+		<object class="wxMenuBar" variable="menuBar" member="no">
+			<object class="wxMenu" variable="fileMenu" member="no">
+				<label>&amp;File</label>
+				<object class="wxMenuItem" name="idNewProject" variable="MenuItem9" member="yes">
+					<label>New</label>
+					<accel>Ctrl-N</accel>
+					<help>Create a new project</help>
+					<handler function="OnNew" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="wxID_OPEN" variable="MenuItem8" member="no">
+					<label>Open...</label>
+					<accel>Ctrl-O</accel>
+					<help>Open Images or Project</help>
+				</object>
+				<object class="wxMenuItem" name="importImagesID" variable="MenuItem11" member="no">
+					<label>Import Images...</label>
+					<help>Import images for a new project</help>
+					<handler function="OnImport" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="wxID_SAVE" variable="MenuItem10" member="yes">
+					<label>Save</label>
+					<accel>Ctrl-S</accel>
+					<help>Save Project</help>
+				</object>
+				<object class="wxMenuItem" name="wxID_SAVEAS" variable="MenuItem4" member="yes">
+					<label>Save As...</label>
+					<help>Save Project As...</help>
+					<handler function="OnSaveAs" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idExport" variable="MenuItem12" member="yes">
+					<label>Export 360 View</label>
+					<accel>Ctrl-E</accel>
+					<help>Export to Web, Flash or GIF</help>
+					<handler function="OnExport" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idExportImages" variable="MenuItem3" member="yes">
+					<label>Export Images</label>
+					<accel>Ctrl-Shift-E</accel>
+					<help>Export images to an external tool</help>
+					<handler function="OnExportImages" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="wxID_EXIT" variable="MenuItem1" member="no">
+					<label>Quit</label>
+					<accel>Alt-F4</accel>
+					<help>Quit the application</help>
+				</object>
+			</object>
+			<object class="wxMenu" variable="captureMenu" member="yes">
+				<label>&amp;Capture</label>
+				<object class="wxMenuItem" name="idAutoCapture" variable="MenuItem13" member="yes">
+					<label>Start</label>
+					<help>Start Automatic Capture</help>
+					<handler function="OnStartAutoCapture" entry="EVT_MENU" />
+				</object>
+				<object class="wxMenuItem" name="idStopCapture" variable="MenuItem14" member="yes">
+					<label>Stop</label>
+					<help>Stop Image Capture</help>
+					<handler function="OnStopCapture" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idCapture" variable="MenuItem15" member="yes">
+					<label>Capture Picture</label>
+					<help>Capture Current Frame</help>
+					<handler function="OnCapture" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="helpMenu" member="no">
+				<label>&amp;Help</label>
+				<object class="wxMenuItem" name="idViewHelp" variable="MenuItem5" member="yes">
+					<label>View Help</label>
+					<accel>F1</accel>
+					<help>Show program documentation</help>
+					<handler function="OnViewHelp" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
+					<label>About</label>
+					<help>Show info about this application</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
+			<fields>1</fields>
+			<widths>-1</widths>
+			<styles>wxSB_NORMAL</styles>
+		</object>
+		<object class="wxTimer" name="ID_TIMER1" variable="playTimer" member="yes">
+			<handler function="OnPlayTimer" entry="EVT_TIMER" />
+		</object>
+	</object>
+</wxsmith>

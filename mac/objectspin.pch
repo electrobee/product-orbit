@@ -1,0 +1,7 @@
+#define Rect RectD
+#define ttOpen ttOpenD
+#include <Carbon/Carbon.h>
+#undef Rect
+#undef ttOpen
+#include "maid3.h"
+//#include <wx/wx.h>
