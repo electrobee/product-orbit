@@ -40,12 +40,10 @@ Camera::Ptr Camera::GetConnected()
         if (canon->Connect()) return canon;
     }
 #endif
-    /*
 	{
 		Ptr canonEOS(new CanonEOS());
         if (canonEOS->Connect()) return canonEOS;
     }
-    */
     {
 		Ptr nikon(new NikonCamera());
         if (nikon->Connect()) return nikon;
@@ -53,7 +51,7 @@ Camera::Ptr Camera::GetConnected()
 #ifdef __WXDEBUG__
 	Ptr cam(new Camera());
 	return cam;
-#else 
+#else
     return Ptr(); // we hit this if no connected & supported cameras were found
 #endif
 }

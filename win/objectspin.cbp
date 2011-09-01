@@ -107,8 +107,9 @@
 			<Add directory="..\src\canon\EDSDK 2.8 Windows\EDSDK\Library" />
 		</Linker>
 		<ExtraCommands>
-			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRLIB.dll&quot; &quot;$(TARGET_OUTPUT_DIR)PRLIB.dll&quot; /E /Y /D' />
-			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRSDK.dll&quot; &quot;$(TARGET_OUTPUT_DIR)PRSDK.dll&quot; /E /Y /D' />
+			<Add after="cmd /c cd" />
+			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRLIB.dll&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /E /Y /D' />
+			<Add after='cmd /c xcopy &quot;..\src\canon\PS-ReCSDK 1.1.0e\PSReCSDK\redist\PRSDK.dll&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /E /Y /D' />
 			<Add after='cmd /c xcopy &quot;..\src\canon\EDSDK 2.8 Windows\EDSDK\Dll\*.dll&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /E /Y /D' />
 			<Add after='cmd /c xcopy &quot;..\src\nikon\lib\*&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /Y /D' />
 			<Add after='cmd /c xcopy &quot;..\src\icons&quot; &quot;$(TARGET_OUTPUT_DIR)icons\&quot; /E /Y /D' />
