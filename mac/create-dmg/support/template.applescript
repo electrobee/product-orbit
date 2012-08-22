@@ -35,7 +35,9 @@ on process_disk_image(volumeName)
 			
 			-- Positioning
 			POSITION_CLAUSE
-			-- set position of item "Adium.app" to {196, 273}
+			close
+			open
+			-- set position of item
 			
 			-- Custom icons
 			-- my copyIconOfTo(artPath & "/ApplicationsIcon", "/Volumes/" & volumeName & "/Applications")

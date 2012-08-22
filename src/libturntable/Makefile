@@ -1,15 +1,15 @@
 # Use the following 3 lines on Unix and Mac OS X:
-#USBFLAGS = `libusb-config --cflags`
-#USBLIBS =  -static `libusb-config --libs`
+USBFLAGS = `libusb-config --cflags`
+USBLIBS =  -static `libusb-config --libs`
 
 # Use the following 3 lines on Windows and comment out the 3 above:
-USBFLAGS =
-USBLIBS = -lhid -lsetupapi
+#USBFLAGS =
+#USBLIBS = -lhid -lsetupapi
 
 INCLUDES =
 
 CC = gcc
-CFLAGS = -O -Wall $(USBFLAGS)
+CFLAGS = -arch i386 -O -Wall $(USBFLAGS)
 LIBS = $(USBLIBS)
 
 SRC = turntable.c hiddata.c
