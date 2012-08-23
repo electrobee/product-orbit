@@ -13,11 +13,11 @@ FlashExporter::FlashExporter(const wxString& tempDir, const wxSize& exportSize, 
         throw std::runtime_error("Could not create 'export' directory required for exporting.");
 
     wxXmlNode* movie = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("movie"));
-    movie->AddProperty(wxT("version"), wxT("9"));
-    movie->AddProperty(wxT("width"), to_wxStr(exportSize.x));
-    movie->AddProperty(wxT("height"), to_wxStr(exportSize.y));
-	movie->AddProperty(wxT("framerate"), wxT("30"));
-	movie->AddProperty(wxT("frames"), wxT("2"));
+    movie->AddAttribute(wxT("version"), wxT("9"));
+    movie->AddAttribute(wxT("width"), to_wxStr(exportSize.x));
+    movie->AddAttribute(wxT("height"), to_wxStr(exportSize.y));
+	movie->AddAttribute(wxT("framerate"), wxT("30"));
+	movie->AddAttribute(wxT("frames"), wxT("2"));
     resources.SetRoot(movie);
 
 #ifdef __MACOS__
@@ -34,9 +34,9 @@ FlashExporter::FlashExporter(const wxString& tempDir, const wxSize& exportSize, 
 	// add library clip for frames
 
 	currLibraryClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-    currLibraryClip->AddProperty(wxT("id"), wxT("first"));
-    currLibraryClip->AddProperty(wxT("width"), to_wxStr(exportSize.x));
-    currLibraryClip->AddProperty(wxT("height"), to_wxStr(exportSize.y));
+    currLibraryClip->AddAttribute(wxT("id"), wxT("first"));
+    currLibraryClip->AddAttribute(wxT("width"), to_wxStr(exportSize.x));
+    currLibraryClip->AddAttribute(wxT("height"), to_wxStr(exportSize.y));
     library->AddChild(currLibraryClip);
 
 	// add first image clip
@@ -44,8 +44,8 @@ FlashExporter::FlashExporter(const wxString& tempDir, const wxSize& exportSize, 
 
 	wxXmlNode *firstFrame = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("frame"));
 	wxXmlNode *firstPlace = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("place"));
-	firstPlace->AddProperty(wxT("id"), wxT("img0"));
-	firstPlace->AddProperty(wxT("depth"), wxT("1"));
+	firstPlace->AddAttribute(wxT("id"), wxT("img0"));
+	firstPlace->AddAttribute(wxT("depth"), wxT("1"));
 	firstFrame->AddChild(firstPlace);
 	currLibraryClip->AddChild(firstFrame);
 
@@ -53,15 +53,15 @@ FlashExporter::FlashExporter(const wxString& tempDir, const wxSize& exportSize, 
 	// add orbit.swf
 
 	wxXmlNode* orbitClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-	orbitClip->AddProperty(wxT("id"), wxT("orbit-sprite"));
-	orbitClip->AddProperty(wxT("import"), flashRoot + wxT("/orbit.swf"));
+	orbitClip->AddAttribute(wxT("id"), wxT("orbit-sprite"));
+	orbitClip->AddAttribute(wxT("import"), flashRoot + wxT("/orbit.swf"));
 	currFrame->AddChild(orbitClip);
 
 	// add fonts.swf
 
 	wxXmlNode* fontsClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-	fontsClip->AddProperty(wxT("id"), wxT("Symbols"));
-	fontsClip->AddProperty(wxT("import"), flashRoot + wxT("/fonts.swf"));
+	fontsClip->AddAttribute(wxT("id"), wxT("Symbols"));
+	fontsClip->AddAttribute(wxT("import"), flashRoot + wxT("/fonts.swf"));
 	library->AddChild(fontsClip);
 	currFrame->AddChild(library);
 	movie->AddChild(currFrame);
@@ -76,29 +76,29 @@ FlashExporter::FlashExporter(const wxString& tempDir, const wxSize& exportSize, 
 	// add library clip for frames
 
     nextLibraryClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-    nextLibraryClip->AddProperty(wxT("id"), wxT("img"));
-    nextLibraryClip->AddProperty(wxT("width"), to_wxStr(exportSize.x));
-    nextLibraryClip->AddProperty(wxT("height"), to_wxStr(exportSize.y));
+    nextLibraryClip->AddAttribute(wxT("id"), wxT("img"));
+    nextLibraryClip->AddAttribute(wxT("width"), to_wxStr(exportSize.x));
+    nextLibraryClip->AddAttribute(wxT("height"), to_wxStr(exportSize.y));
     library->AddChild(nextLibraryClip);
 
 	// add cursor clip
 
 	wxXmlNode* cursorClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-	cursorClip->AddProperty(wxT("id"), wxT("cursor-image"));
-	cursorClip->AddProperty(wxT("import"), flashRoot + wxT("/cursor.png"));
+	cursorClip->AddAttribute(wxT("id"), wxT("cursor-image"));
+	cursorClip->AddAttribute(wxT("import"), flashRoot + wxT("/cursor.png"));
 	nextFrame->AddChild(cursorClip);
 
 	wxXmlNode* cursorPlace = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("place"));
-	cursorPlace->AddProperty(wxT("id"), wxT("cursor-image"));
-	cursorPlace->AddProperty(wxT("depth"), wxT("1"));
+	cursorPlace->AddAttribute(wxT("id"), wxT("cursor-image"));
+	cursorPlace->AddAttribute(wxT("depth"), wxT("1"));
 
 	wxXmlNode* cursorFrame = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("frame"));
 	cursorFrame->AddChild(cursorPlace);
 
 	wxXmlNode* cursorLibraryClip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-	cursorLibraryClip->AddProperty(wxT("id"), wxT("cursor"));
-	cursorLibraryClip->AddProperty(wxT("x"), wxT("0"));
-	cursorLibraryClip->AddProperty(wxT("y"), wxT("0"));
+	cursorLibraryClip->AddAttribute(wxT("id"), wxT("cursor"));
+	cursorLibraryClip->AddAttribute(wxT("x"), wxT("0"));
+	cursorLibraryClip->AddAttribute(wxT("y"), wxT("0"));
 	cursorLibraryClip->AddChild(cursorFrame);
 
 	library->AddChild(cursorLibraryClip);
@@ -140,13 +140,13 @@ void FlashExporter::AddFrame(AnnotatedImage::Ptr image, ImageFilterStack& filter
     croppedFile.MakeAbsolute();
 
     wxXmlNode* clip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-    clip->AddProperty(wxT("id"), wxT("img") + to_wxStr(numImages));
-    clip->AddProperty(wxT("import"), croppedFile.GetFullPath());
+    clip->AddAttribute(wxT("id"), wxT("img") + to_wxStr(numImages));
+    clip->AddAttribute(wxT("import"), croppedFile.GetFullPath());
 
     wxXmlNode* frameNode = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("frame"));
     wxXmlNode* place = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("place"));
-    place->AddProperty(wxT("id"), wxT("img") + to_wxStr(numImages));
-    place->AddProperty(wxT("depth"), wxT("1"));
+    place->AddAttribute(wxT("id"), wxT("img") + to_wxStr(numImages));
+    place->AddAttribute(wxT("depth"), wxT("1"));
     frameNode->AddChild(place);
 	currLibraryClip->AddChild(frameNode);
 	currFrame->AddChild(clip);
@@ -184,24 +184,24 @@ void FlashExporter::AddWatermark(Watermark &watermark) {
 
     // add watermark to features
     wxXmlNode* tag = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("watermark"));
-    tag->AddProperty(wxT("x"), to_wxStr(bounds.x));
-    tag->AddProperty(wxT("y"), to_wxStr(bounds.y));
+    tag->AddAttribute(wxT("x"), to_wxStr(bounds.x));
+    tag->AddAttribute(wxT("y"), to_wxStr(bounds.y));
     features.GetRoot()->AddChild(tag);
 
     // add watermark to resources
     wxXmlNode* clip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-    clip->AddProperty(wxT("id"), wxT("watermark"));
-    clip->AddProperty(wxT("import"), watermark.GetName());
+    clip->AddAttribute(wxT("id"), wxT("watermark"));
+    clip->AddAttribute(wxT("import"), watermark.GetName());
     currFrame->AddChild(clip);
 
     // watermark clip
     clip = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("clip"));
-    clip->AddProperty(wxT("id"), wxT("logo"));
+    clip->AddAttribute(wxT("id"), wxT("logo"));
 
     wxXmlNode* frameNode = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("frame"));
     wxXmlNode* place = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("place"));
-    place->AddProperty(wxT("id"), wxT("watermark"));
-    place->AddProperty(wxT("depth"), wxT("1"));
+    place->AddAttribute(wxT("id"), wxT("watermark"));
+    place->AddAttribute(wxT("depth"), wxT("1"));
     frameNode->AddChild(place);
 	clip->AddChild(frameNode);
 	library->AddChild(clip);
@@ -223,12 +223,12 @@ wxXmlNode* FlashExporter::SerializeTag(const TagRegion& tagRegion)
     wxRect bounds = (tagBounds * exportSize).ToWxRect();
 
     wxXmlNode* tag = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("feature"));
-    tag->AddProperty(wxT("frame"), to_wxStr(numImages));
-    tag->AddProperty(wxT("x"), to_wxStr(bounds.x));
-    tag->AddProperty(wxT("y"), to_wxStr(bounds.y));
-    tag->AddProperty(wxT("width"), to_wxStr(bounds.width));
-    tag->AddProperty(wxT("height"), to_wxStr(bounds.height));
-    tag->AddProperty(wxT("tip"), tagRegion.GetValue());
+    tag->AddAttribute(wxT("frame"), to_wxStr(numImages));
+    tag->AddAttribute(wxT("x"), to_wxStr(bounds.x));
+    tag->AddAttribute(wxT("y"), to_wxStr(bounds.y));
+    tag->AddAttribute(wxT("width"), to_wxStr(bounds.width));
+    tag->AddAttribute(wxT("height"), to_wxStr(bounds.height));
+    tag->AddAttribute(wxT("tip"), tagRegion.GetValue());
 
     return tag;
 }

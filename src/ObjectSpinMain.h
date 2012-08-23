@@ -66,9 +66,10 @@ class ObjectSpinFrame: public wxCustomDocParentFrame
 {
     public:
 
-        ObjectSpinFrame(DocManager* manager, wxFrame* parent,wxWindowID id = -1);
+        ObjectSpinFrame(DocManager* manager, wxFrame* parent, wxWindowID id = -1);
         virtual ~ObjectSpinFrame();
-
+    
+        void CreateDefaultProject();
         void UpdateSliderLabel();
         size_t GetNumImages();
         void SetSliderRange(size_t numImages);

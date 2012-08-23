@@ -26,6 +26,7 @@ protected:
 
 public:
 	Command(CameraModel *model) : _model(model) {}
+    virtual ~Command() {}
 
 	CameraModel* getCameraModel(){return _model;}
 

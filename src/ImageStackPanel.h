@@ -64,7 +64,7 @@ public:
 	    using namespace boost;
 
 		wxXmlNode* node = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("image"));
-		node->AddProperty(wxT("name"), fileName);
+		node->AddAttribute(wxT("name"), fileName);
 		XmlAddChildren(node, tags.begin(), tags.end(), mem_fn(&TagRegion::Serialize));
 		return node;
 	}
@@ -72,7 +72,7 @@ public:
 	static Ptr Deserialize(wxXmlNode* node, wxSize bounds, wxWindow* parent)
 	{
 		assert(node->GetName() == wxT("image"));
-		Ptr img = New(node->GetPropVal(wxT("name"), wxT("")), bounds);
+		Ptr img = New(node->GetAttribute(wxT("name"), wxT("")), bounds);
 		wxXmlNode* tagNode = node->GetChildren();
 		while (tagNode && tagNode->GetName() == wxT("tag"))
 		{

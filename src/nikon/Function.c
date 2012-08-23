@@ -42,6 +42,7 @@ SLONG CallMAIDEntryPoint(
 }
 //------------------------------------------------------------------------------------------------
 //
+/*
 BOOL Search_Module( const char* Path )
 {
 #ifdef _WINDOWS
@@ -69,10 +70,12 @@ BOOL Search_Module( const char* Path )
 	GetCurrentProcess( (ProcessSerialNumber*)&ProcessSN );
 	GetProcessInformation( (ProcessSerialNumber*)&ProcessSN, &stPIRec );
 	// Make FSSpec of Type0003 Module.
-	FSMakeFSSpec( AppSpec.vRefNum, AppSpec.parID, "\pType0003 Module.bundle", (FSSpecPtr)Path );
+    
+	FSMakeFSRefUnicode( AppSpec.vRefNum, AppSpec.parID, "\pType0003 Module.bundle", (FSSpecPtr)Path );
 #endif
 	return true;
 }
+*/
 //------------------------------------------------------------------------------------------------
 //
 BOOL Load_Module( const char* Path )

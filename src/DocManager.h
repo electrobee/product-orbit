@@ -3,6 +3,10 @@
 #include <wx/docview.h>
 #include <wx/filename.h>
 #include <wx/log.h>
+#include <wx/stdpaths.h>
+#include <wx/filedlg.h>
+
+#include "NewProjectDialog.h"
 
 class DocManager : public wxDocManager
 {
@@ -12,19 +16,30 @@ public:
 
     virtual wxDocument *CreateDocument(const wxString& path, long flags = 0)
     {
-        wxFileName filePath = wxFileName(path);
         wxString projectName;
-        if (!filePath.HasName())
+        wxFileName filePath = wxFileName(path);
+        
+        if(flags == wxDOC_NEW && path == "")
         {
-            if(filePath.GetDirs().IsEmpty())
-                projectName = wxT("project.osp");
-            else
-                projectName = filePath.GetDirs().Last() + wxT(".osp");
+            filePath = wxStandardPaths::Get().GetAppDocumentsDir();
+            projectName = "Untitled.osp";
+        } else if (path == "")
+        {
+            return wxDocManager::CreateDocument("", flags);
         } else
         {
-            projectName = filePath.GetFullName();
-            if(projectName.Right(4).CmpNoCase(wxT(".osp")) != 0)
-                projectName += wxT(".osp");
+            if (!filePath.HasName())
+            {
+                if(filePath.GetDirs().IsEmpty())
+                    projectName = wxT("project.osp");
+                else
+                    projectName = filePath.GetDirs().Last() + wxT(".osp");
+            } else
+            {
+                projectName = filePath.GetFullName();
+                if(projectName.Right(4).CmpNoCase(wxT(".osp")) != 0)
+                    projectName += wxT(".osp");
+            }
         }
         wxSetWorkingDirectory(filePath.GetPath());
 

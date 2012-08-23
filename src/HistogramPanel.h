@@ -57,8 +57,8 @@ public:
 	void Serialize(wxXmlNode* parent)
 	{
 		wxXmlNode* node = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("histogram"));
-		node->AddProperty(wxT("min"), to_wxStr(minL));
-		node->AddProperty(wxT("max"), to_wxStr(maxL));
+		node->AddAttribute(wxT("min"), to_wxStr(minL));
+		node->AddAttribute(wxT("max"), to_wxStr(maxL));
 		parent->InsertChild(node, parent->GetChildren());
 	}
 	
@@ -66,8 +66,8 @@ public:
 	{
 		assert(node->GetName() == wxT("histogram"));
 		long minVal, maxVal;
-		node->GetPropVal(wxT("min"), wxT("0")).ToLong(&minVal);
-		node->GetPropVal(wxT("max"), wxT("255")).ToLong(&maxVal);
+		node->GetAttribute(wxT("min"), wxT("0")).ToLong(&minVal);
+		node->GetAttribute(wxT("max"), wxT("255")).ToLong(&maxVal);
 		minL = minVal;
 		maxL = maxVal;
 		Refresh();

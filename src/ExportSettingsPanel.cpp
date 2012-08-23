@@ -209,7 +209,7 @@ void ExportSettingsPanel::OnWatermarkSelect(wxCommandEvent& event)
         wxFileDialog* openDialog = new wxFileDialog(
             this, _("Select a watermark image"), wxEmptyString, wxEmptyString,
             _("Image files (*.jpg;*.jpeg;*.bmp;*.png;*.tiff;*.gif)|*.jpg;*.jpeg;*.bmp;*.png;*.tiff;*.gif"),
-            wxFD_OPEN | wxFILE_MUST_EXIST, wxDefaultPosition);
+            wxFD_OPEN | wxFD_FILE_MUST_EXIST, wxDefaultPosition);
 
         if (openDialog->ShowModal() == wxID_OK)
         {

@@ -101,7 +101,7 @@ void	CALLPASCAL CALLBACK CompletionProc( LPNkMAIDObject pObject, ULONG ulCommand
 NKERROR	CALLPASCAL CALLBACK DataProc( NKREF ref, LPVOID pDataInfo, LPVOID pData );
 
 void	InitRefObj( LPRefObj pRef );
-BOOL	Search_Module( const char* Path );
+//BOOL	Search_Module( const char* Path );
 BOOL	Load_Module( const char* Path );
 BOOL	Close_Module( LPRefObj pRefMod );
 BOOL	EnumCapabilities( LPNkMAIDObject pobject, ULONG* pulCapCount, LPNkMAIDCapInfo* ppCapArray, LPNKFUNC pfnComplete, NKREF refComplete );

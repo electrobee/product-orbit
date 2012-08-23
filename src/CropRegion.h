@@ -159,19 +159,19 @@ protected:
 	{
 	    Rect<double> rect = GetRelativeBounds();
 		wxXmlNode* node = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("lasso"));
-		node->AddProperty(wxT("x"), to_wxStr(rect.x));
-		node->AddProperty(wxT("y"), to_wxStr(rect.y));
-		node->AddProperty(wxT("width"), to_wxStr(rect.width));
-		node->AddProperty(wxT("height"), to_wxStr(rect.height));
+		node->AddAttribute(wxT("x"), to_wxStr(rect.x));
+		node->AddAttribute(wxT("y"), to_wxStr(rect.y));
+		node->AddAttribute(wxT("width"), to_wxStr(rect.width));
+		node->AddAttribute(wxT("height"), to_wxStr(rect.height));
 		return node;
 	}
 	static RectangularLasso Deserialize(wxXmlNode* node, wxWindow* parent, wxSize containerSize)
 	{
 		Rect<double> rect;
-		node->GetPropVal(wxT("x"), wxT("0")).ToDouble(&rect.x);
-		node->GetPropVal(wxT("y"), wxT("0")).ToDouble(&rect.y);
-		node->GetPropVal(wxT("width"), wxT("0")).ToDouble(&rect.width);
-		node->GetPropVal(wxT("height"), wxT("0")).ToDouble(&rect.height);
+		node->GetAttribute(wxT("x"), wxT("0")).ToDouble(&rect.x);
+		node->GetAttribute(wxT("y"), wxT("0")).ToDouble(&rect.y);
+		node->GetAttribute(wxT("width"), wxT("0")).ToDouble(&rect.width);
+		node->GetAttribute(wxT("height"), wxT("0")).ToDouble(&rect.height);
 
 		return RectangularLasso(parent, rect * containerSize, containerSize);
 	}
@@ -281,13 +281,13 @@ public:
 	{
 		wxXmlNode* node = RectangularLasso::Serialize();
 		node->SetName(wxT("tag"));	// override parent's name with child node's
-		node->AddProperty(wxT("name"), value);
+		node->AddAttribute(wxT("name"), value);
 		return node;
 	}
 	static TagRegion Deserialize(wxXmlNode* node, wxWindow* parent, wxSize containerSize)
 	{
 		assert(node->GetName() == wxT("tag"));
-		return TagRegion(RectangularLasso::Deserialize(node, parent, containerSize), node->GetPropVal(wxT("name"), wxT("")));
+		return TagRegion(RectangularLasso::Deserialize(node, parent, containerSize), node->GetAttribute(wxT("name"), wxT("")));
 	}
 
 private:
@@ -328,17 +328,17 @@ public:
 	    if (!image.IsOk()) return NULL;
 
 		wxXmlNode* node = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("watermark"));
-		node->AddProperty(wxT("src"), imageName);
-		node->AddProperty(wxT("x"), to_wxStr(bounds.x));
-		node->AddProperty(wxT("y"), to_wxStr(bounds.y));
+		node->AddAttribute(wxT("src"), imageName);
+		node->AddAttribute(wxT("x"), to_wxStr(bounds.x));
+		node->AddAttribute(wxT("y"), to_wxStr(bounds.y));
 		return node;
 	}
 	static Watermark Deserialize(wxXmlNode* node, wxWindow* parent, wxSize containerSize)
 	{
 		assert(node->GetName() == wxT("watermark"));
-		Watermark w( parent, node->GetPropVal(wxT("src"), wxT("")), containerSize );
-		node->GetPropVal(wxT("x"), wxT("0")).ToDouble(&w.bounds.x);
-		node->GetPropVal(wxT("y"), wxT("0")).ToDouble(&w.bounds.y);
+		Watermark w( parent, node->GetAttribute(wxT("src"), wxT("")), containerSize );
+		node->GetAttribute(wxT("x"), wxT("0")).ToDouble(&w.bounds.x);
+		node->GetAttribute(wxT("y"), wxT("0")).ToDouble(&w.bounds.y);
 		return w;
 	}
 

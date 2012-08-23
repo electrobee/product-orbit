@@ -14,7 +14,7 @@ bool ThreadHelper::TasksRunning() {
 }
 
 unsigned int ThreadHelper::NumTasks() {
-    return tasks.size() + (GetThread() && GetThread()->IsRunning()) ? 1 : 0;
+    return (tasks.size() + (GetThread() && GetThread()->IsRunning())) ? 1 : 0;
 }
 
 void ThreadHelper::Wait() {
@@ -30,7 +30,7 @@ bool ThreadHelper::ScheduleTask(Task task)
     tasksLock.Unlock();
 
     if(!(GetThread() && GetThread()->IsRunning())) {
-        if (Create() != wxTHREAD_NO_ERROR) {
+        if (CreateThread() != wxTHREAD_NO_ERROR) {
             return false;
         }
         if (GetThread()->Run() != wxTHREAD_NO_ERROR) {

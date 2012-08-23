@@ -64,6 +64,7 @@ inline wxImage ResizeToFitBounds(const wxImage& img, const wxSize& bounds)
     resizeFactor = std::min(resizeFactor, float(bounds.GetHeight()) / img.GetHeight());
     if (resizeFactor < 1.0f)
     {
+        // wxIMAGE_QUALITY_NORMAL wxIMAGE_QUALITY_HIGH wxIMAGE_QUALITY_BILINEAR wxIMAGE_QUALITY_BICUBIC
         return img.Scale(int(img.GetWidth() * resizeFactor), int(img.GetHeight() * resizeFactor), wxIMAGE_QUALITY_NORMAL);
     }
     else return img;

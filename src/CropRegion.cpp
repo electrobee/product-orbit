@@ -149,7 +149,7 @@ void CropRegion::Paint(wxDC& dc)
 
     wxPen oldPen = dc.GetPen();
     wxBrush oldBrush = dc.GetBackground();
-    int oldFunc = dc.GetLogicalFunction();
+    wxRasterOperationMode oldFunc = dc.GetLogicalFunction();
 
     dc.SetLogicalFunction(wxINVERT);
 
@@ -254,7 +254,7 @@ void Watermark::Paint(wxDC& dc)
 
     wxPen oldPen = dc.GetPen();
     wxBrush oldBrush = dc.GetBackground();
-    int oldFunc = dc.GetLogicalFunction();
+    wxRasterOperationMode oldFunc = dc.GetLogicalFunction();
 
     if (GetMouseOver() == this)
     {

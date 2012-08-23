@@ -11,6 +11,15 @@
 		AA00CB95128CB17B00D24296 /* orbit.swf in Tools */ = {isa = PBXBuildFile; fileRef = AA00CB93128CB17B00D24296 /* orbit.swf */; };
 		AA00CEBF128D067B00D24296 /* bin in Tools */ = {isa = PBXBuildFile; fileRef = AA00CEBE128D067B00D24296 /* bin */; };
 		AA115597128DBC91003F82D1 /* orbit.icns in Resources */ = {isa = PBXBuildFile; fileRef = AA115596128DBC91003F82D1 /* orbit.icns */; };
+		AA373E8315E5B4FE00E6CD56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8215E5B4FE00E6CD56 /* Foundation.framework */; };
+		AA373E8515E5B50600E6CD56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8415E5B50600E6CD56 /* Cocoa.framework */; };
+		AA373E8715E5B52400E6CD56 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8615E5B52400E6CD56 /* Carbon.framework */; };
+		AA373E8915E5B54800E6CD56 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8815E5B54800E6CD56 /* OpenGL.framework */; };
+		AA373E8B15E5B56200E6CD56 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8A15E5B56200E6CD56 /* IOKit.framework */; };
+		AA373E9115E5B5C300E6CD56 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E9015E5B5C300E6CD56 /* libz.dylib */; };
+		AA373E9315E5B5DA00E6CD56 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E9215E5B5DA00E6CD56 /* libiconv.dylib */; };
+		AA373E9615E5E1F200E6CD56 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA373E8C15E5B57500E6CD56 /* libxml2.dylib */; };
+		AA373E9915E60D9400E6CD56 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA373E9815E60D9400E6CD56 /* README.txt */; };
 		AA3BE05B11FBC6830023E8F5 /* haxe in Tools */ = {isa = PBXBuildFile; fileRef = AA3BDEAC11FBC6830023E8F5 /* haxe */; };
 		AA3BE05C11FBC6830023E8F5 /* swfmill in Tools */ = {isa = PBXBuildFile; fileRef = AA3BE05511FBC6830023E8F5 /* swfmill */; };
 		AA3CA89C11FCBB8F00180F46 /* Main.hx in Tools */ = {isa = PBXBuildFile; fileRef = AA3CA89B11FCBB8F00180F46 /* Main.hx */; };
@@ -54,7 +63,6 @@
 		FA11AD0910A12AAB00CC7035 /* ArtFromResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA11ACF910A12AAB00CC7035 /* ArtFromResource.cpp */; };
 		FA11AD1D10A12B9500CC7035 /* CallBack.c in Sources */ = {isa = PBXBuildFile; fileRef = FA11AD1110A12B9500CC7035 /* CallBack.c */; };
 		FA11AD2010A12B9500CC7035 /* Function.c in Sources */ = {isa = PBXBuildFile; fileRef = FA11AD1C10A12B9500CC7035 /* Function.c */; };
-		FA11AD8110A130A700CC7035 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA11AD8010A130A700CC7035 /* Carbon.framework */; };
 		FA11E7AD10A14C640043B428 /* ObjectSpinApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA11E7AB10A14C640043B428 /* ObjectSpinApp.cpp */; };
 		FABFE26E111FB2910016828F /* icons in Resources */ = {isa = PBXBuildFile; fileRef = FABFE21C111FB2910016828F /* icons */; };
 		FAC21BA2110983460072B1ED /* AsyncTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC21B9E110983460072B1ED /* AsyncTask.cpp */; };
@@ -108,7 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8D1107310486CEB800E47090 /* turntable-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "turntable-Info.plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ProductOrbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductOrbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00CAC4128CB05500D24296 /* abcsymbol */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = abcsymbol; path = "../flash/tools-mac/abcsymbol/bin/abcsymbol"; sourceTree = SOURCE_ROOT; };
 		AA00CAC6128CB06E00D24296 /* libneko.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libneko.dylib; path = "../flash/tools-mac/abcsymbol/bin/libneko.dylib"; sourceTree = SOURCE_ROOT; };
@@ -116,6 +124,16 @@
 		AA00CB93128CB17B00D24296 /* orbit.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = orbit.swf; path = "../flash/flash-viewer/src/orbit.swf"; sourceTree = SOURCE_ROOT; };
 		AA00CEBE128D067B00D24296 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bin; path = "../flash/tools-mac/abcsymbol/bin"; sourceTree = SOURCE_ROOT; };
 		AA115596128DBC91003F82D1 /* orbit.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = orbit.icns; path = ../src/orbit.icns; sourceTree = SOURCE_ROOT; };
+		AA373E8215E5B4FE00E6CD56 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA373E8415E5B50600E6CD56 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA373E8615E5B52400E6CD56 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		AA373E8815E5B54800E6CD56 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AA373E8A15E5B56200E6CD56 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AA373E8C15E5B57500E6CD56 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		AA373E8E15E5B59900E6CD56 /* libexpat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libexpat.dylib; path = usr/lib/libexpat.dylib; sourceTree = SDKROOT; };
+		AA373E9015E5B5C300E6CD56 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AA373E9215E5B5DA00E6CD56 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		AA373E9815E60D9400E6CD56 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		AA3BDBA611FBC5A80023E8F5 /* CHANGES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES.txt; sourceTree = "<group>"; };
 		AA3BDBA711FBC5A80023E8F5 /* haxe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = haxe; sourceTree = "<group>"; };
 		AA3BDBA811FBC5A80023E8F5 /* haxedoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = haxedoc; sourceTree = "<group>"; };
@@ -627,7 +645,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA11AD8110A130A700CC7035 /* Carbon.framework in Frameworks */,
+				AA373E8B15E5B56200E6CD56 /* IOKit.framework in Frameworks */,
+				AA373E8915E5B54800E6CD56 /* OpenGL.framework in Frameworks */,
+				AA373E8715E5B52400E6CD56 /* Carbon.framework in Frameworks */,
+				AA373E8515E5B50600E6CD56 /* Cocoa.framework in Frameworks */,
+				AA373E8315E5B4FE00E6CD56 /* Foundation.framework in Frameworks */,
 				AA4934751102C3E300F255EC /* EDSDK.framework in Frameworks */,
 				AA98EA741102D73200E3FA70 /* DPP.framework in Frameworks */,
 				AABF3B551557304A00E43D8F /* libjpeg.8.dylib in Frameworks */,
@@ -635,6 +657,9 @@
 				AABF3B571557304A00E43D8F /* libMagickCore.5.dylib in Frameworks */,
 				AABF3B581557304A00E43D8F /* libMagickWand.5.dylib in Frameworks */,
 				AABF3B591557304A00E43D8F /* libtiff.3.dylib in Frameworks */,
+				AA373E9115E5B5C300E6CD56 /* libz.dylib in Frameworks */,
+				AA373E9315E5B5DA00E6CD56 /* libiconv.dylib in Frameworks */,
+				AA373E9615E5E1F200E6CD56 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +738,16 @@
 		29B97314FDCFA39411CA2CEA /* wxtemplate */ = {
 			isa = PBXGroup;
 			children = (
+				AA373E9815E60D9400E6CD56 /* README.txt */,
+				AA373E9215E5B5DA00E6CD56 /* libiconv.dylib */,
+				AA373E9015E5B5C300E6CD56 /* libz.dylib */,
+				AA373E8E15E5B59900E6CD56 /* libexpat.dylib */,
+				AA373E8C15E5B57500E6CD56 /* libxml2.dylib */,
+				AA373E8A15E5B56200E6CD56 /* IOKit.framework */,
+				AA373E8815E5B54800E6CD56 /* OpenGL.framework */,
+				AA373E8615E5B52400E6CD56 /* Carbon.framework */,
+				AA373E8415E5B50600E6CD56 /* Cocoa.framework */,
+				AA373E8215E5B4FE00E6CD56 /* Foundation.framework */,
 				AAE964C812E0EEC1003FE6E3 /* images */,
 				AADB250712C9310300D0D8B2 /* magick */,
 				AADB24FA12C930D000D0D8B2 /* magick */,
@@ -748,7 +783,7 @@
 				AA54537E12C9AE7D00C94E70 /* libNkPTPDriver.dylib */,
 				AA115596128DBC91003F82D1 /* orbit.icns */,
 				FABFE21C111FB2910016828F /* icons */,
-				8D1107310486CEB800E47090 /* turntable-Info.plist */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 				AA85727D1123CC9500635148 /* D40 Module.bundle */,
 				AA85727E1123CC9500635148 /* D80 Module.bundle */,
 				AA85727F1123CC9500635148 /* D200 Module.bundle */,
@@ -1564,7 +1599,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "objectspin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1601,6 +1636,7 @@
 				AA54537912C9AC3E00C94E70 /* Type0004 Module.bundle in Resources */,
 				AA54537F12C9AE7D00C94E70 /* libNkPTPDriver.dylib in Resources */,
 				AA7824AE13B05A1A00DF5F94 /* Type0005 Module.bundle in Resources */,
+				AA373E9915E60D9400E6CD56 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1652,6 +1688,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1666,20 +1703,22 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
 					__MACOS__,
+					__WXOSX_COCOA__,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					../src/libturntable,
 					../src/nikon,
-					../../boost_1_41_0,
+					../../boost_1_51_0,
 					"$(WX_HEADERS)",
+					"$(WX_DIR)/include",
 					"\"../src/canon/EDSDK 2.8 Mac/EDSDK/Header\"",
 					../src/eos,
 					../src/eos/Camera,
 					../src/eos/Class,
 					../src/eos/Command,
 				);
-				INFOPLIST_FILE = "turntable-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1687,15 +1726,28 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/magick\"",
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
+					/usr/local/lib,
+					"$(WX_BUILD_DIR)/lib",
+					/usr/local/Cellar/expat/2.0.1/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXDEBUG_CFLAGS)";
 				OTHER_LDFLAGS = (
 					"-lturntable",
-					"$(WXDEBUG_LFLAGS)",
-					/usr/local/lib/libusb.dylib,
+					"-lusb",
+					"-lwx_baseu-2.9",
+					"-lwx_baseu_net-2.9",
+					"-lwx_baseu_xml-2.9",
+					"-lwx_osx_cocoau_core-2.9",
+					"-lwxpng-2.9",
+					"-lwxtiff-2.9",
+					"-lwxregexu-2.9",
+					"-lwxexpat-2.9",
 				);
 				PRODUCT_NAME = ProductOrbit;
+				WX_BUILD_DIR = "$(WX_DIR)/osx-debug";
+				WX_DIR = "/Users/alexei/src/electrobee/wxWidgets-2.9.4";
+				WX_HEADERS = "$(WX_BUILD_DIR)/lib/wx/include/osx_cocoa-unicode-static-2.9";
 			};
 			name = Debug;
 		};
@@ -1703,6 +1755,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1714,20 +1767,24 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = objectspin.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = __MACOS__;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					__MACOS__,
+					__WXOSX_COCOA__,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					../src/libturntable,
 					../src/nikon,
-					../../boost_1_41_0,
+					../../boost_1_51_0,
 					"$(WX_HEADERS)",
+					"$(WX_DIR)/include",
 					"\"../src/canon/EDSDK 2.8 Mac/EDSDK/Header\"",
 					../src/eos,
 					../src/eos/Camera,
 					../src/eos/Class,
 					../src/eos/Command,
 				);
-				INFOPLIST_FILE = "turntable-Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1735,15 +1792,28 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/magick\"",
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
+					/usr/local/lib,
+					"$(WX_BUILD_DIR)/lib",
+					/usr/local/Cellar/expat/2.0.1/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXRELEASE_CFLAGS)";
 				OTHER_LDFLAGS = (
 					"-lturntable",
-					"$(WXRELEASE_LFLAGS)",
-					/usr/local/lib/libusb.dylib,
+					"-lusb",
+					"-lwx_baseu-2.9",
+					"-lwx_baseu_net-2.9",
+					"-lwx_baseu_xml-2.9",
+					"-lwx_osx_cocoau_core-2.9",
+					"-lwxpng-2.9",
+					"-lwxtiff-2.9",
+					"-lwxregexu-2.9",
+					"-lwxexpat-2.9",
 				);
 				PRODUCT_NAME = ProductOrbit;
+				WX_BUILD_DIR = "$(WX_DIR)/osx-release";
+				WX_DIR = "/Users/alexei/src/electrobee/wxWidgets-2.9.4";
+				WX_HEADERS = "$(WX_BUILD_DIR)/lib/wx/include/osx_cocoa-unicode-static-2.9";
 			};
 			name = Release;
 		};
@@ -1758,7 +1828,7 @@
 				HEADER_SEARCH_PATHS = (
 					../src/libturntable,
 					../src/nikon,
-					../../boost_1_41_0,
+					../../boost_1_51_0,
 				);
 				INSTALL_PATH = build/Debug;
 				LIBRARY_SEARCH_PATHS = ../src/libturntable;
@@ -1768,7 +1838,7 @@
 					"-lusb",
 				);
 				PRODUCT_NAME = ProductOrbit;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -1782,7 +1852,7 @@
 				HEADER_SEARCH_PATHS = (
 					../src/libturntable,
 					../src/nikon,
-					../../boost_1_41_0,
+					../../boost_1_51_0,
 				);
 				INSTALL_PATH = build/Release;
 				LIBRARY_SEARCH_PATHS = ../src/libturntable;
@@ -1792,7 +1862,7 @@
 					"-lusb",
 				);
 				PRODUCT_NAME = ProductOrbit;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};

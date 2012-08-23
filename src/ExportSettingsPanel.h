@@ -52,11 +52,11 @@ class ExportSettingsPanel: public wxPanel
 		void Serialize(wxXmlNode* parent)
 		{
 			wxXmlNode* node = new wxXmlNode(wxXML_ELEMENT_NODE, wxT("export"));
-			node->AddProperty(wxT("width"), to_wxStr(GetExportDims().x));
-			node->AddProperty(wxT("height"), to_wxStr(GetExportDims().y));
-			node->AddProperty(wxT("quality"), to_wxStr(qualitySlider->GetValue()));
-			node->AddProperty(wxT("animate"), to_wxStr(rotateOnce->GetValue()));
-			node->AddProperty(wxT("framerate"), to_wxStr(framerateCtl->GetValue()));
+			node->AddAttribute(wxT("width"), to_wxStr(GetExportDims().x));
+			node->AddAttribute(wxT("height"), to_wxStr(GetExportDims().y));
+			node->AddAttribute(wxT("quality"), to_wxStr(qualitySlider->GetValue()));
+			node->AddAttribute(wxT("animate"), to_wxStr(rotateOnce->GetValue()));
+			node->AddAttribute(wxT("framerate"), to_wxStr(framerateCtl->GetValue()));
 			parent->InsertChild(node, parent->GetChildren());
 		}
 
@@ -65,11 +65,11 @@ class ExportSettingsPanel: public wxPanel
 			assert(node->GetName() == wxT("export"));
 			long width, height, animate;
 			unsigned long quality, framerate;
-			node->GetPropVal(wxT("width"), wxT("0")).ToLong(&width);
-			node->GetPropVal(wxT("height"), wxT("0")).ToLong(&height);
-			node->GetPropVal(wxT("quality"), wxT("80")).ToULong(&quality);
-			node->GetPropVal(wxT("animate"), wxT("0")).ToLong(&animate);
-			node->GetPropVal(wxT("framerate"), wxT("24")).ToULong(&framerate);
+			node->GetAttribute(wxT("width"), wxT("0")).ToLong(&width);
+			node->GetAttribute(wxT("height"), wxT("0")).ToLong(&height);
+			node->GetAttribute(wxT("quality"), wxT("80")).ToULong(&quality);
+			node->GetAttribute(wxT("animate"), wxT("0")).ToLong(&animate);
+			node->GetAttribute(wxT("framerate"), wxT("24")).ToULong(&framerate);
 			widthCtrl->SetValue(width > 0 ? width : widthCtrl->GetValue());
 			heightCtrl->SetValue(height > 0 ? height : heightCtrl->GetValue());
 			qualitySlider->SetValue(quality);

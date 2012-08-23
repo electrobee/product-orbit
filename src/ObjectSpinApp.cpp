@@ -46,11 +46,8 @@ bool ObjectSpinApp::OnInit()
 #endif
 
     // Create a template relating drawing documents to their views
-    (void) new wxDocTemplate(&docManager, _T("Project file"), _T("*.osp"), _T(""), _T("osp"), _T("Object Spin Doc"), _T("Object Spin View"),
+    (void) new wxDocTemplate(&docManager, "Project file", "*.osp", "", "osp", "ProductOrbit Project", "ProductOrbit View",
         CLASSINFO(ObjectSpinDocument), CLASSINFO(ObjectSpinView));
-#ifdef __WXMAC__
-    wxFileName::MacRegisterDefaultTypeAndCreator( wxT("osp") , 'WXMB' , 'WXMA' ) ;
-#endif
     docManager.SetMaxDocsOpen(1);
 
     GUITask::Init(); // initialize mechanism for running tasks within the gui thread
@@ -71,6 +68,7 @@ bool ObjectSpinApp::OnInit()
         //*)
 
         mainFrame = (ObjectSpinFrame*)GetTopWindow();
+        //mainFrame->CreateDefaultProject();
 
         return wxsOK;
     }

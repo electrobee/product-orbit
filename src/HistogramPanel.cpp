@@ -16,6 +16,8 @@ EVT_PAINT(HistogramPanel::PaintEvent)
 
 END_EVENT_TABLE()
 
+#define clamp(x,lo,hi) std::min(hi,std::max(lo,x))
+
 HistogramPanel::HistogramPanel(wxWindow *parent, wxWindowID winid, const wxPoint& pos, const wxSize& size,
                                long style, const wxString& name)
                                : wxPanel(parent, winid, pos, size, style, name),
@@ -116,12 +118,12 @@ void HistogramPanel::OnMouseMoved(wxMouseEvent& event)
     if (distToMinL < distToMaxL)
     {
         SetCursor(wxCursor(wxCURSOR_SIZEWE));
-        if (event.LeftIsDown()) { minL = x; Refresh(); }
+        if (event.LeftIsDown()) { minL = clamp(x, 0, 255); Refresh(); }
     }
     else
     {
         SetCursor(wxCursor(wxCURSOR_SIZEWE));
-        if (event.LeftIsDown()) { maxL = std::min(x, 0xFF); Refresh(); }
+        if (event.LeftIsDown()) { maxL = clamp(x, 0, 255); Refresh(); }
     }
 }
 

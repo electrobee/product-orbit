@@ -32,7 +32,7 @@
 #include <wx/string.h>
 //*)
 
-#include <wx/config.h>
+#include <wx/stdpaths.h>
 
 
 //helper functions
@@ -116,7 +116,7 @@ BEGIN_EVENT_TABLE(ObjectSpinFrame,wxDocParentFrame)
     EVT_COMMAND(wxID_ANY, wxEVT_CAMERA_ERROR, ObjectSpinFrame::OnCameraError)
 END_EVENT_TABLE()
 
-ObjectSpinFrame::ObjectSpinFrame(DocManager* manager, wxFrame* parent,wxWindowID id)
+ObjectSpinFrame::ObjectSpinFrame(DocManager* manager, wxFrame* parent, wxWindowID id)
 : wxCustomDocParentFrame(manager, parent, id, _("ProductOrbit "VERSION)), turntable(this), imagesToCapture(0), cancelled(false)
 {
     //(*Initialize(ObjectSpinFrame)
@@ -313,18 +313,18 @@ ObjectSpinFrame::ObjectSpinFrame(DocManager* manager, wxFrame* parent,wxWindowID
 
     scrolledWindow->SetScrollRate(10, 10);
 
-    wxToolBar* toolBar = new wxToolBar(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL|wxNO_BORDER, _T("ID_TOOLBAR1"));
-    toolBar->AddTool(idNewProject, _("New Project"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("page_white_add.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Create a New Project"), _("Create a New Project"));
-    toolBar->AddTool(wxID_OPEN, _("Open"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("page_white_camera.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Open Existing Project"), _("Open Existing Project"));
-    toolBar->AddTool(importImagesID, _("Import Images"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("folder_image.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Import Existing Images"), _("Import Existing Images"));
+    wxToolBar* toolBar = CreateToolBar();
+    toolBar->AddTool(idNewProject,"New Project", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("page_white_add.png"),wxART_TOOLBAR), "Create a New Project");
+    toolBar->AddTool(wxID_OPEN, "Open", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("page_white_camera.png"),wxART_TOOLBAR), "Open Existing Project");
+    toolBar->AddTool(importImagesID, "Import Images", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("folder_image.png"),wxART_TOOLBAR), "Import Existing Images");
     toolBar->AddSeparator();
-    toolBar->AddTool(wxID_SAVE, _("Save"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("page_save.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Save Project"), _("Save Project"));
+    toolBar->AddTool(wxID_SAVE, "Save", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("page_save.png"),wxART_TOOLBAR), "Save Project");
     toolBar->AddSeparator();
-    toolBar->AddTool(idAutoCapture, _("Start"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("camera_go.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Start Automatic Image Capture"), _("Start Automatic Image Capture"));
-    toolBar->AddTool(idCapture, _("Capture"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("camera_add.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Capture Image"), _("Capture Image"));
+    toolBar->AddTool(idAutoCapture, "Start", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("camera_go.png"),wxART_TOOLBAR), "Start Automatic Image Capture");
+    toolBar->AddTool(idCapture, "Capture", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("camera_add.png"),wxART_TOOLBAR), "Capture Image");
     toolBar->AddSeparator();
-    toolBar->AddTool(idExport, _("Export"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("film_save.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Export to Web, Flash or GIF"), _("Export to Web, Flash or GIF"));
-    toolBar->AddTool(idExportImages, _("Export Images"), wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("images.png")),wxART_TOOLBAR), wxNullBitmap, wxITEM_NORMAL, _("Export images to an external tool"), _("Export images to an external tool"));
+    toolBar->AddTool(idExport, "Export", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("film_save.png"),wxART_TOOLBAR), "Export to Web, Flash or GIF");
+    toolBar->AddTool(idExportImages, "Export Images", wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR("images.png"),wxART_TOOLBAR), "Export images to an external tool");
     toolBar->Realize();
     SetToolBar(toolBar);
 
@@ -333,6 +333,11 @@ ObjectSpinFrame::ObjectSpinFrame(DocManager* manager, wxFrame* parent,wxWindowID
 //#ifdef DEBUG
     logWindow = new wxLogWindow(this, wxT("Console"));
     wxLog::SetActiveTarget(logWindow);
+    
+    wxPoint pos = GetScreenPosition();
+    //wxSize log_size = logWindow->GetFrame()->GetSize();
+    wxSize size = GetSize();
+    logWindow->GetFrame()->Move(pos.x + size.x, pos.y);
 //#endif
 
     imageStackPanel->GetImageFilters().Push(histogramPanel);
@@ -351,6 +356,15 @@ ObjectSpinFrame::~ObjectSpinFrame()
     //(*Destroy(ObjectSpinFrame)
     //*)
     SaveSettings();
+}
+
+void ObjectSpinFrame::CreateDefaultProject()
+{
+    // create a new document
+    GetDocumentManager()->CreateNewDocument();
+    imageStackPanel->SetNumImages(32);
+    SetSliderRange(32);
+    ShowImage(0);
 }
 
 void ObjectSpinFrame::DocumentCreated()
@@ -493,7 +507,7 @@ void ObjectSpinFrame::ShowImage(size_t i)
 void ObjectSpinFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxT("ProductOrbit "VERSION"\n\n(c) 2010 Electrobee, Canada");
-    wxMessageBox(msg, _("Welcome to..."));
+    wxMessageBox(msg, "Welcome to...");
 }
 
 void ObjectSpinFrame::OnNew(wxCommandEvent& event)
@@ -525,7 +539,7 @@ void ObjectSpinFrame::OnImport(wxCommandEvent& event)
     wxFileDialog* openDialog = new wxFileDialog(
 		this, _("Select a set of images to import"), GetDefaultProjectPath(), wxEmptyString,
 		_("Image files (*.jpg;*.jpeg;*.bmp;*.png;*.tiff;*.gif)|*.jpg;*.jpeg;*.bmp;*.png;*.tiff;*.gif"),
-		wxFD_OPEN | wxFILE_MUST_EXIST | wxMULTIPLE, wxDefaultPosition);
+		wxFD_OPEN | wxFD_FILE_MUST_EXIST | wxFD_MULTIPLE, wxDefaultPosition);
 
     if (openDialog->ShowModal() == wxID_OK)
     {

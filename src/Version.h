@@ -1,6 +1,6 @@
 #pragma once
 
-#define VER     "1.1.4"
+#define VER     "1.2.0"
 
 #ifdef __WXDEBUG__
 #define VERSION VER " DEBUG"

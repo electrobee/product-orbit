@@ -27,7 +27,7 @@ public:
         if (thread.get())
         {
             // wait for the task to finish
-            if (thread->Wait() != 0) wxLogError(wxT("Task did not finish properly."));
+            if (thread->Wait() != 0) { wxLogError(wxT("Task did not finish properly.")); }
         }
     }
 
@@ -48,7 +48,7 @@ public:
                 if (thread->Add(task)) return true;
                 else
                 {   // releases the thread's resources
-                    if (thread->Wait() != 0) wxLogError(wxT("Task did not finish properly."));
+                    if (thread->Wait() != 0) { wxLogError(wxT("Task did not finish properly.")); }
                     thread.reset();
                 }
             }
