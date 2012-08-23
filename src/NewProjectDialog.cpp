@@ -58,8 +58,8 @@ NewProjectDialog::NewProjectDialog(wxWindow* parent, wxWindowID id)
 	StaticText3 = new wxStaticText(this, ID_STATICTEXT3, _("Number of images to capture"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 	BoxSizer4->Add(StaticText3, 0, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	BoxSizer4->Add(70,0,1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	numImages = new wxSpinCtrl(this, ID_SPINCTRL1, _T("12"), wxDefaultPosition, wxDefaultSize, 0, 1, 100, 12, _T("ID_SPINCTRL1"));
-	numImages->SetValue(_T("12"));
+	numImages = new wxSpinCtrl(this, ID_SPINCTRL1, _T("32"), wxDefaultPosition, wxDefaultSize, 0, 1, 120, 32, _T("ID_SPINCTRL1"));
+	numImages->SetValue(_T("32"));
 	BoxSizer4->Add(numImages, 0, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 	BoxSizer1->Add(BoxSizer4, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);
 	StaticLine2 = new wxStaticLine(this, ID_STATICLINE2, wxDefaultPosition, wxSize(10,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE2"));

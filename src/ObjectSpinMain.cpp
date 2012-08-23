@@ -199,7 +199,7 @@ ObjectSpinFrame::ObjectSpinFrame(DocManager* manager, wxFrame* parent, wxWindowI
     myControlPaneSizer->Add(nextPositionButton, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     imageSlider = new wxSlider(Panel1, ID_IMAGE_SLIDER, 0, 0, 11, wxDefaultPosition, wxDefaultSize, wxSL_BOTH, wxDefaultValidator, _T("ID_IMAGE_SLIDER"));
     myControlPaneSizer->Add(imageSlider, 1, wxTOP|wxBOTTOM|wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    imageSliderText = new wxStaticText(Panel1, ID_STATICTEXT1, _("1/12"), wxDefaultPosition, wxSize(40,-1), wxST_NO_AUTORESIZE|wxALIGN_RIGHT, _T("ID_STATICTEXT1"));
+    imageSliderText = new wxStaticText(Panel1, ID_STATICTEXT1, _("1/32"), wxDefaultPosition, wxSize(50,-1), wxST_NO_AUTORESIZE|wxALIGN_RIGHT, _T("ID_STATICTEXT1"));
     myControlPaneSizer->Add(imageSliderText, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     progressBar = new wxGauge(Panel1, ID_GAUGE1, 100, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_GAUGE1"));
     myControlPaneSizer->Add(progressBar, 1, wxLEFT|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -752,9 +752,7 @@ void ObjectSpinFrame::ExportImages(wxString file)
     }
 
 	if (!cancelled) GUITask::Run(&ImagesExporter::Save, &exporter);
-
-    // Runs "exporter.Save(file);" from the GUI thread.
-    //if (!cancelled) GUITask::Run(&WebExporter::Save, &exporter, file);
+    
     ShowProgressBar(false);
 }
 

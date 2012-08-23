@@ -100,7 +100,7 @@ void WebExporter::Save() {
     html << wxT("<!-- Begin ProductOrbit -->") << endl;
     html << wxT("<!-- Place once just before </head> -->") << endl;
     html << wxT("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/productorbit.css\" />") << endl;
-    html << wxT("<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js\"></script>") << endl;
+    html << wxT("<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js\"></script>") << endl;
     html << wxT("<!-- End ProductOrbit -->") << endl;
     html << endl;
     html << wxT("<title>ProductOrbit</title>") << endl;

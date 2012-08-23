@@ -43,11 +43,6 @@
 		AA98EA741102D73200E3FA70 /* DPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA98EA731102D73200E3FA70 /* DPP.framework */; };
 		AA98EA791102D74500E3FA70 /* DPP.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA98EA731102D73200E3FA70 /* DPP.framework */; };
 		AAB749C912C00CEC0066540C /* SettingsPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAB749C712C00CEC0066540C /* SettingsPanel.cpp */; };
-		AABF3B551557304A00E43D8F /* libjpeg.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AABF3B501557304A00E43D8F /* libjpeg.8.dylib */; };
-		AABF3B561557304A00E43D8F /* liblcms.1.0.19.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AABF3B511557304A00E43D8F /* liblcms.1.0.19.dylib */; };
-		AABF3B571557304A00E43D8F /* libMagickCore.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AABF3B521557304A00E43D8F /* libMagickCore.5.dylib */; };
-		AABF3B581557304A00E43D8F /* libMagickWand.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AABF3B531557304A00E43D8F /* libMagickWand.5.dylib */; };
-		AABF3B591557304A00E43D8F /* libtiff.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AABF3B541557304A00E43D8F /* libtiff.3.dylib */; };
 		AADB250C12C9310300D0D8B2 /* magick in Tools */ = {isa = PBXBuildFile; fileRef = AADB250712C9310300D0D8B2 /* magick */; };
 		AAE964C912E0EEC1003FE6E3 /* images in Tools */ = {isa = PBXBuildFile; fileRef = AAE964C812E0EEC1003FE6E3 /* images */; };
 		FA11ACFB10A12AAB00CC7035 /* TagDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA11ACDC10A12AAB00CC7035 /* TagDialog.cpp */; };
@@ -571,11 +566,6 @@
 		AAB749C712C00CEC0066540C /* SettingsPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SettingsPanel.cpp; path = ../src/SettingsPanel.cpp; sourceTree = SOURCE_ROOT; };
 		AAB749C812C00CEC0066540C /* SettingsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPanel.h; path = ../src/SettingsPanel.h; sourceTree = SOURCE_ROOT; };
 		AAB749EA12C017ED0066540C /* ExtendShutDownTimerCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendShutDownTimerCommand.h; sourceTree = "<group>"; };
-		AABF3B501557304A00E43D8F /* libjpeg.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libjpeg.8.dylib; sourceTree = "<group>"; };
-		AABF3B511557304A00E43D8F /* liblcms.1.0.19.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liblcms.1.0.19.dylib; sourceTree = "<group>"; };
-		AABF3B521557304A00E43D8F /* libMagickCore.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMagickCore.5.dylib; sourceTree = "<group>"; };
-		AABF3B531557304A00E43D8F /* libMagickWand.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMagickWand.5.dylib; sourceTree = "<group>"; };
-		AABF3B541557304A00E43D8F /* libtiff.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtiff.3.dylib; sourceTree = "<group>"; };
 		AADB24FB12C930D000D0D8B2 /* convert */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = convert; sourceTree = "<group>"; };
 		AADB250712C9310300D0D8B2 /* magick */ = {isa = PBXFileReference; lastKnownFileType = folder; path = magick; sourceTree = "<group>"; };
 		AAE964C812E0EEC1003FE6E3 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../web/images; sourceTree = SOURCE_ROOT; };
@@ -652,11 +642,6 @@
 				AA373E8315E5B4FE00E6CD56 /* Foundation.framework in Frameworks */,
 				AA4934751102C3E300F255EC /* EDSDK.framework in Frameworks */,
 				AA98EA741102D73200E3FA70 /* DPP.framework in Frameworks */,
-				AABF3B551557304A00E43D8F /* libjpeg.8.dylib in Frameworks */,
-				AABF3B561557304A00E43D8F /* liblcms.1.0.19.dylib in Frameworks */,
-				AABF3B571557304A00E43D8F /* libMagickCore.5.dylib in Frameworks */,
-				AABF3B581557304A00E43D8F /* libMagickWand.5.dylib in Frameworks */,
-				AABF3B591557304A00E43D8F /* libtiff.3.dylib in Frameworks */,
 				AA373E9115E5B5C300E6CD56 /* libz.dylib in Frameworks */,
 				AA373E9315E5B5DA00E6CD56 /* libiconv.dylib in Frameworks */,
 				AA373E9615E5E1F200E6CD56 /* libxml2.dylib in Frameworks */,
@@ -1531,11 +1516,6 @@
 			isa = PBXGroup;
 			children = (
 				AADB24FB12C930D000D0D8B2 /* convert */,
-				AABF3B501557304A00E43D8F /* libjpeg.8.dylib */,
-				AABF3B511557304A00E43D8F /* liblcms.1.0.19.dylib */,
-				AABF3B521557304A00E43D8F /* libMagickCore.5.dylib */,
-				AABF3B531557304A00E43D8F /* libMagickWand.5.dylib */,
-				AABF3B541557304A00E43D8F /* libtiff.3.dylib */,
 			);
 			path = magick;
 			sourceTree = "<group>";
@@ -1728,7 +1708,6 @@
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
 					/usr/local/lib,
 					"$(WX_BUILD_DIR)/lib",
-					/usr/local/Cellar/expat/2.0.1/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXDEBUG_CFLAGS)";
@@ -1743,6 +1722,7 @@
 					"-lwxtiff-2.9",
 					"-lwxregexu-2.9",
 					"-lwxexpat-2.9",
+					"-ljpeg",
 				);
 				PRODUCT_NAME = ProductOrbit;
 				WX_BUILD_DIR = "$(WX_DIR)/osx-debug";
@@ -1794,7 +1774,6 @@
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
 					/usr/local/lib,
 					"$(WX_BUILD_DIR)/lib",
-					/usr/local/Cellar/expat/2.0.1/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXRELEASE_CFLAGS)";
@@ -1809,6 +1788,7 @@
 					"-lwxtiff-2.9",
 					"-lwxregexu-2.9",
 					"-lwxexpat-2.9",
+					"-ljpeg",
 				);
 				PRODUCT_NAME = ProductOrbit;
 				WX_BUILD_DIR = "$(WX_DIR)/osx-release";

@@ -22,3 +22,24 @@ Installing libusb on OS X
 =========================
 brew install libusb --universal --HEAD
 brew install ~/src/electrobee/product-orbit/mac/libusb-compat.rb --universal --HEAD
+
+Installing ImageMagick on OS X
+==============================
+cd ~/src/electrobee
+wget http://www.imagemagick.org/download/ImageMagick-6.7.9-0.tar.bz2
+tar xjvf ImageMagick-6.7.9-0.tar.bz2
+cd ImageMagick-6.7.9-0
+wget http://www.imagemagick.org/download/delegates/libpng-1.5.12.tar.gz
+tar xvzf libpng-1.5.12.tar.gz 
+mv libpng-1.5.12 png
+cd png && ./configure --disable-shared && make && cd ..
+wget http://www.imagemagick.org/download/delegates/jpegsrc.v8b.tar.gz
+tar xzvf jpegsrc.v8b.tar.gz
+mv jpeg-8b jpeg
+cd jpeg && ./configure --disable-shared && make && cd ..
+wget http://www.imagemagick.org/download/delegates/zlib-1.2.7.tar.bz2
+tar xzvf zlib-1.2.7.tar.bz2 
+mv zlib-1.2.7 zlib
+cd jpeg && ./configure --static && make && cd ..
+/configure --disable-osx-universal-binary --without-perl --disable-shared --enable-static --without-gslib --without-x --without-lcms --without-tiff --without-xml --without-bzlib --without-jp2 --without-lzma --disable-opencl --disable-openmp --enable-zero-configuration --disable-installed --enable-delegate-build
+cp utilities/convert /Users/alexei/src/electrobee/product-orbit/mac/magick

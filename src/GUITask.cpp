@@ -68,6 +68,7 @@ void GUITask::Run(Task task)
     guiTask->AddPendingEvent(event);
 
     condition.Wait();   // wait until the task completes in the gui thread
+    mutex.Unlock();
 }
 
 void GUITask::Send(Task task)
