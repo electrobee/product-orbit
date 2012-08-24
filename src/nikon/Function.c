@@ -15,6 +15,8 @@
 #include "maid3d1.h"
 #include "CtrlSample.h"
 
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 extern ULONG	g_ulCameraType;	// CameraType
 extern LPMAIDEntryPointProc	g_pMAIDEntryPoint;
 

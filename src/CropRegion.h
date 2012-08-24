@@ -2,6 +2,7 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
+#include <wx/overlay.h>
 #include "Util.h"
 
 // declare custom lasso events

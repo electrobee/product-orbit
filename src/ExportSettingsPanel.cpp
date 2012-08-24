@@ -78,7 +78,9 @@ ExportSettingsPanel::ExportSettingsPanel(wxWindow* parent,wxWindowID id,const wx
 	StaticText5 = new wxStaticText(this, ID_STATICTEXT5, _("Quality"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
 	FlexGridSizer1->Add(StaticText5, 1, wxTOP|wxBOTTOM|wxLEFT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 	qualitySlider = new wxSlider(this, ID_SLIDER1, 80, 50, 100, wxDefaultPosition, wxDefaultSize, wxSL_AUTOTICKS|wxSL_LABELS, wxDefaultValidator, _T("ID_SLIDER1"));
-	qualitySlider->SetTickFreq(5);
+#ifdef _WINDOWS
+    qualitySlider->SetTickFreq(5);
+#endif
 	qualitySlider->SetPageSize(5);
 	FlexGridSizer1->Add(qualitySlider, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer1->Add(0,0,0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 0);

@@ -145,20 +145,23 @@ void RectangularLasso::OnMouseMoved(wxMouseEvent& event)
 
 void CropRegion::Paint(wxDC& dc)
 {
+    
     wxRect bounds = GetBounds();
 
     wxPen oldPen = dc.GetPen();
     wxBrush oldBrush = dc.GetBackground();
     wxRasterOperationMode oldFunc = dc.GetLogicalFunction();
 
-    dc.SetLogicalFunction(wxINVERT);
+    //dc.SetLogicalFunction(wxINVERT); // broken on OSX...
 
     // draw the rectangular lasso
     dc.SetBrush(*wxTRANSPARENT_BRUSH);
-    //dc.SetPen(wxPen(*wxWHITE, 1, wxSOLID));
+    //dc.SetPen(wxPen(*wxBLACK, 1, wxDOT));
     //dc.DrawRectangle(bounds);
     dc.SetPen(wxPen(*wxBLACK, 1, wxDOT));
     dc.DrawRectangle(bounds);
+    dc.SetPen(wxPen(*wxWHITE, 1, wxDOT));
+    dc.DrawRectangle(bounds.Deflate(1, 1));
 
     dc.SetLogicalFunction(oldFunc);
 
@@ -259,7 +262,7 @@ void Watermark::Paint(wxDC& dc)
     if (GetMouseOver() == this)
     {
         // draw a bounding box
-        dc.SetLogicalFunction(wxINVERT);
+        //dc.SetLogicalFunction(wxINVERT); // broken on OSX...
         dc.SetBrush(*wxTRANSPARENT_BRUSH);
         dc.SetPen(wxPen(*wxBLACK, 1, wxSOLID));
         dc.DrawRectangle(bounds);

@@ -5,6 +5,8 @@
 #include <wx/stdpaths.h>
 #include <wx/filename.h>
 
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "Util.h"
 #ifdef __WXDEBUG__
     #define debug(...) LogMessage(__VA_ARGS__)
