@@ -18,7 +18,7 @@ using namespace std;
 
 CanonEOS::CanonEOS() : _camera(NULL), _model(NULL), _controller(NULL), _capHandler(NULL), _vfHandler(NULL),
 					   _vfStartCondition(_vfStartMutex), _vfAvailable(false) {
-    static EdsError err = EdsInitializeSDK(); // HACK: otherwise connecting a second time crashes...
+    static EdsError err = EdsInitializeSDK(); // HACK: otherwise connecting a second time crashes... (are they called on the same thread?)
     if (err != EDS_ERR_OK)
     {
         debug(wxT("Failed to start EDSDK: 0x%x"), err);
