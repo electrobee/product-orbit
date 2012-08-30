@@ -6,6 +6,7 @@
 #include <wx/filename.h>
 
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#pragma GCC diagnostic ignored "-Wunused-variable"
 
 #include "Util.h"
 #ifdef __WXDEBUG__
