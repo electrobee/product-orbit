@@ -44,12 +44,10 @@ Camera::Ptr Camera::GetConnected()
         Ptr canonEOS(new CanonEOS());
         if (canonEOS->Connect()) return canonEOS;
     }
-    /*
     {
         Ptr nikon(new NikonCamera());
         if (nikon->Connect()) return nikon;
     }
-    */
 #ifdef __WXDEBUG__
 	Ptr cam(new Camera());
 	return cam;

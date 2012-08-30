@@ -506,7 +506,7 @@ void ObjectSpinFrame::ShowImage(size_t i)
 
 void ObjectSpinFrame::OnAbout(wxCommandEvent& event)
 {
-    wxString msg = wxT("ProductOrbit "VERSION"\n\n(c) 2010 Electrobee, Canada");
+    wxString msg = wxT("ProductOrbit "VERSION"\n\n(c) 2012 Electrobee, Canada");
     wxMessageBox(msg, "Welcome to...");
 }
 
