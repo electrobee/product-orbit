@@ -248,6 +248,7 @@ void CameraPanel::OnWB(wxCommandEvent& event)
 
 inline void SetChoice(wxChoice* choice, const wxString& selection)
 {
+    wxString sel = selection.IsEmpty() ? " " : selection;
     if (choice->GetCount() <= 1)
     {
         // if only a single choice is available, then user has no control over
@@ -255,14 +256,14 @@ inline void SetChoice(wxChoice* choice, const wxString& selection)
 #ifdef __WXMAC__
 		choice->Enable(true);   // control must be enabled on mac in order to change its displayed value.
 #endif
-        if (choice->IsEmpty())  choice->Append(selection);
-        else                    choice->SetString(0, selection);
+        if (choice->IsEmpty())  choice->Append(sel);
+        else                    choice->SetString(0, sel);
         choice->SetSelection(0);
         choice->Enable(false);
     }
     else
     {
-		bool val = choice->SetStringSelection(selection);
+		bool val = choice->SetStringSelection(sel);
 		choice->Enable(val);
 
     }

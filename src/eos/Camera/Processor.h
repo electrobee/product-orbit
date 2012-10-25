@@ -27,7 +27,7 @@ class Processor : public Thread
 
 protected:
     // Whether it is executing it or not?
-	bool _running;
+	volatile bool _running;
 	// Que
 	std::deque<Command*>  _queue;
 
@@ -128,7 +128,7 @@ public:
 			}
 		}
 		
-		// Clear que
+		// Clear queue
 		clear();
 
 		// Command of end
