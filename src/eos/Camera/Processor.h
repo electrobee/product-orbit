@@ -132,12 +132,12 @@ public:
 		clear();
 
 		// Command of end
-		if(_closeCommand != NULL)
-		{
-			_closeCommand->execute();
-			delete _closeCommand;
-			_closeCommand = NULL;
-		}
+//		if(_closeCommand != NULL)
+//		{
+//			_closeCommand->execute();
+//			delete _closeCommand;
+//			_closeCommand = NULL;
+//		}
 #ifdef _WINDOWS
 		CoUninitialize();
 #endif

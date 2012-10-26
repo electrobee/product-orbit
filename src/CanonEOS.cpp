@@ -127,8 +127,9 @@ bool CanonEOS::ViewfinderStart(wxEvtHandler* receiver) {
 	//debug(wxT("Thread 1: %ul"), wxThread::GetId());
 
 	_vfStartMutex.Lock();
+    _vfAvailable = true;
     fireEvent("startEVF");
-	_vfStartCondition.Wait();
+	_vfStartCondition.WaitTimeout(1000); // something weird is going on, are both using the same thread???
 	_vfStartMutex.Unlock();
 
 	if(_vfAvailable) {

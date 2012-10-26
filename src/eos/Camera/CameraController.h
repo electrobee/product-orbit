@@ -176,6 +176,7 @@ public:
 
 		if( command == "closing")
 		{
+            EdsCloseSession(_model->getCameraObject());
 			_processor.setCloseCommand(new CloseSessionCommand(_model));
 			_processor.stop();
 			_processor.join();
