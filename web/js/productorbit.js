@@ -127,7 +127,9 @@
   this.$container[0].ontouchend   = onTouchUp;
   
   // This is required for some reason...
-  document.addEventListener('touchstart', function() {}, false);
+  if (document.addEventListener != undefined && document.addEventListener != null) {
+    document.addEventListener('touchstart', function() {}, false);
+  }
   
   this.$container.bind('mouseenter', function () {
                        orbiter.$featureBoxContainer
