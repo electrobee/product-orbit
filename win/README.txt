@@ -3,11 +3,11 @@
 
 SET PATH=c:\MinGW\bin;c:\MinGW\mingw32\bin
 
-# Apply patch
-patch -p0 < /c/Projects/Objectspin/trunk/wxWidgets-2.8.10.patch
-
 # see config.gcc for default settings & more options
-# clean before building
+
+# in include/wx/msw/setup.h and setup0.h set wxUSE_STD_IOSTREAM and wxUSE_PRINTING_ARCHITECTURE to 0
+
+# clean before buildings
 mingw32-make -f makefile.gcc MONOLITHIC=0 SHARED=0 UNICODE=1 BUILD=release clean
 
 # build non-monolithic statically linked libraries with unicode support

@@ -6,5 +6,10 @@ Thumbs.db
 
 *.o
 *.a
-/mac/build/
-/sdk/
+mac/build/
+sdk/
+win/bin/
+win/obj/
+win/installer/*.exe
+src/libturntable/*.a
+src/libturntable/*.o

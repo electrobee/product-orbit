@@ -2,7 +2,7 @@
 
 #define VER     "1.2.1"
 
-#ifdef __WXDEBUG__
+#ifdef _DEBUG
 #define VERSION VER " DEBUG"
 #else
 #define VERSION VER
