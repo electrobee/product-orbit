@@ -226,30 +226,30 @@ void CanonEOS::update(Observable* from, CameraEvent *e)
         switch (propertyID)
         {
         case kEdsPropID_AEMode:
-			//debug(wxT("AEMode: ") + wxString::FromAscii(LookupDesc(tableAEMode, model->getAEMode())));
-            UpdateMode(wxString::FromAscii(LookupDesc(tableAEMode, model->getAEMode())));
+			//debug(wxT("AEMode: ") + wxString::From8BitData(LookupDesc(tableAEMode, model->getAEMode())));
+            UpdateMode(wxString::From8BitData(LookupDesc(tableAEMode, model->getAEMode())));
             break;
         case kEdsPropID_ImageQuality:
-			//debug(wxT("ImageQuality: ") + wxString::FromAscii(LookupDesc(tableQuality, model->getImageQuality())));
-            UpdateQuality(wxString::FromAscii(LookupDesc(tableQuality, model->getImageQuality())));
+			//debug(wxT("ImageQuality: ") + wxString::From8BitData(LookupDesc(tableQuality, model->getImageQuality())));
+            UpdateQuality(wxString::From8BitData(LookupDesc(tableQuality, model->getImageQuality())));
             break;
         case kEdsPropID_Tv:
             // Note: if value is 0, Tv is disabled (i.e. controlled by camera)
-			//debug(wxT("Tv: ") + wxString::FromAscii(LookupDesc(tableTv, model->getTv())));
-            UpdateTv(wxString::FromAscii(LookupDesc(tableTv, model->getTv())));
+			//debug(wxT("Tv: ") + wxString::From8BitData(LookupDesc(tableTv, model->getTv())));
+            UpdateTv(wxString::From8BitData(LookupDesc(tableTv, model->getTv())));
             break;
         case kEdsPropID_Av:
             // Note: if value is 0, Av is disabled (i.e. controlled by camera)
-			//debug(wxT("Av: ") + wxString::FromAscii(LookupDesc(tableAv, model->getAv())));
-            UpdateAv(wxString::FromAscii(LookupDesc(tableAv, model->getAv())));
+			//debug(wxT("Av: ") + wxString::From8BitData(LookupDesc(tableAv, model->getAv())));
+            UpdateAv(wxString::From8BitData(LookupDesc(tableAv, model->getAv())));
             break;
         case kEdsPropID_ISOSpeed:
-			//debug(wxT("ISOSpeed: ") + wxString::FromAscii(LookupDesc(tableISO, model->getIso())));
-            UpdateISO(wxString::FromAscii(LookupDesc(tableISO, model->getIso())));
+			//debug(wxT("ISOSpeed: ") + wxString::From8BitData(LookupDesc(tableISO, model->getIso())));
+            UpdateISO(wxString::From8BitData(LookupDesc(tableISO, model->getIso())));
             break;
         case kEdsPropID_WhiteBalance:
-			//debug(wxT("WhiteBalance: 0x%x ") + wxString::FromAscii(LookupDesc(tableWB, model->getWhiteBalance())), model->getWhiteBalance());
-            UpdateWB(wxString::FromAscii(LookupDesc(tableWB, model->getWhiteBalance())));
+			//debug(wxT("WhiteBalance: 0x%x ") + wxString::From8BitData(LookupDesc(tableWB, model->getWhiteBalance())), model->getWhiteBalance());
+            UpdateWB(wxString::From8BitData(LookupDesc(tableWB, model->getWhiteBalance())));
             break;
         }
 	}
@@ -310,8 +310,8 @@ wxArrayString CanonEOS::ToArrayString(EdsPropertyDesc desc, const PropertyTableE
 
 	//debug(wxT("LIST"));
     for (int i = 0; i < desc.numElements; i++) {
-		//debug(wxT("L: ") + wxString::FromAscii(LookupDesc(propTable, desc.propDesc[i])));
-        list.Add(wxString::FromAscii(LookupDesc(propTable, desc.propDesc[i])));
+		//debug(wxT("L: ") + wxString::From8BitData(LookupDesc(propTable, desc.propDesc[i])));
+        list.Add(wxString::From8BitData(LookupDesc(propTable, desc.propDesc[i])));
     }
 
     return list;
