@@ -64,11 +64,7 @@
   var orbiter = this;
   
   function isLeftMouseButton(e) {
-  if ($.browser.msie) {
-  return e.button === 1;
-  }
-  
-  return e.button === 0;
+  return e.which === 1;
   }
   
   function onDown(e) {
