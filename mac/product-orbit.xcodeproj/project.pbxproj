@@ -1684,6 +1684,7 @@
 					DEBUG,
 					__MACOS__,
 					__WXOSX_COCOA__,
+					_DEBUG,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1706,8 +1707,8 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/magick\"",
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
-					/usr/local/lib,
 					"$(WX_BUILD_DIR)/lib",
+					/usr/local/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXDEBUG_CFLAGS)";
@@ -1773,8 +1774,8 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/magick\"",
 					"\"$(SRCROOT)/../src/nikon/lib/mac\"",
-					/usr/local/lib,
 					"$(WX_BUILD_DIR)/lib",
+					/usr/local/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "$(WXRELEASE_CFLAGS)";
